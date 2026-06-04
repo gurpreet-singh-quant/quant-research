@@ -70,7 +70,7 @@ def download_universe(
     Download data for all symbols and save locally.
     Returns dict of {symbol: dataframe}
     """
-    symbols = symbols or NIFTY50[:10] + INDICES
+    symbols = symbols or NIFTY50[:30] + INDICES
     Path(save_dir).mkdir(parents=True, exist_ok=True)
 
     universe = {}
