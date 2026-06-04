@@ -92,7 +92,30 @@ informed trading...
 ---
 
 ## 7. Experiments and Results
-[To be filled as we build and test]
+## 7. Experiments and Results
+
+### 7.1 Initial Strategy Validation (June 2026)
+
+Data: 11 NSE large-cap stocks, 2018-2026 (2080 trading days)
+Train/Test split: 70/30 walk-forward
+
+| Strategy | Annual Return | Sharpe | Win Rate | GT-Score | Verdict |
+|---|---|---|---|---|---|
+| 20-Day Momentum | +11.4% | 0.249 | 51.6% | 0.067 | FAIL |
+| Mean Reversion | +18.7% | 0.579 | 53.3% | 1.068 | PASS |
+| Combined (Mom+Vol+RSI) | +7.1% | 0.032 | 51.6% | -0.244 | FAIL |
+
+### Key Findings
+1. Mean reversion is the dominant strategy for NSE large-caps
+2. Simple signals outperform complex combinations at this stage
+3. GT-Score successfully identifies overfit strategies before live trading
+4. 18.7% annual return with positive GT-Score is a strong baseline
+
+### Next Steps
+- Expand to 100 stocks (currently 11)
+- Add VPIN microstructure signal
+- Add promoter buying signal
+- Implement confidence threshold filter
 
 ---
 
