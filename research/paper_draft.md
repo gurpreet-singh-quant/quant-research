@@ -2,11 +2,11 @@
 # Framework for Indian Equity Markets
 
 **Author:** Gurpreet Singh  
-**Institution:** [Your University Name]  
+**Institution:** Akal University, Talwandi Sabo, Bathinda, Punjab  
+**Department:** Computer Science and Engineering  
+**Programme:** B.Tech (Honours) — Artificial Intelligence & Machine Learning  
 **Date:** June 2026  
 **Repository:** github.com/i-miss-her-2much/quant-research
-
----
 
 ## Abstract
 
