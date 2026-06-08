@@ -375,7 +375,26 @@ Promoter buying: HCLTECH, SUNPHARMA, HDFCBANK
 Promoter selling: AXISBANK, HINDUNILVR — AVOID
 VPIN buying:     TECHM, HCLTECH, JSWSTEEL
 ---
+### 7.5 Ablation Study
 
+| Configuration | Annual | Sharpe | MaxDD | GT-Score |
+|---|---|---|---|---|
+| Buy & Hold Nifty | +11.2% | 0.273 | -38.4% | N/A |
+| Base Mean Reversion | +10.8% | 0.341 | -27.1% | 1.280 |
+| MR + Regime Filter (v1) | +5.2% | -0.178 | -16.0% | 0.899 |
+| MR + Regime Filter (v2) | TBD | TBD | TBD | TBD |
+
+**Critical finding:** The initial regime filter (block vol > 22%)
+degraded performance by 53%. Investigation revealed the filter
+was designed for momentum strategies — high volatility blocks
+momentum but *enables* mean reversion. This finding motivated
+a corrected regime filter specifically designed for mean-reverting
+strategies, blocking only extreme volatility (>40%) and confirmed
+uptrends where mean reversion has no edge.
+
+This result validates the importance of strategy-specific
+regime conditioning and demonstrates that generic filters
+applied without theoretical justification can destroy alpha.
 ## 8. Discussion and Future Work
 
 ### 8.1 Implications
