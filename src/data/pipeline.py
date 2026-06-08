@@ -15,13 +15,22 @@ from datetime import datetime
 
 # ── Nifty 50 symbols ──────────────────────────────────────────────
 NIFTY50 = [
-    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "ICICIBANK.NS", "BHARTIARTL.NS",
-    "INFOSYS.NS", "SBIN.NS", "LT.NS", "HINDUNILVR.NS", "ITC.NS",
-    "KOTAKBANK.NS", "AXISBANK.NS", "BAJFINANCE.NS", "ASIANPAINT.NS",
-    "MARUTI.NS", "SUNPHARMA.NS", "TITAN.NS", "WIPRO.NS", "HCLTECH.NS",
-    "NTPC.NS", "ONGC.NS", "TATAMOTORS.NS", "JSWSTEEL.NS", "TATASTEEL.NS",
-    "POWERGRID.NS", "ULTRACEMCO.NS", "NESTLEIND.NS", "TECHM.NS",
-    "BAJAJFINSV.NS", "DRREDDY.NS",
+    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "ICICIBANK.NS",
+    "BHARTIARTL.NS", "INFY.NS", "SBIN.NS", "LT.NS",
+    "HINDUNILVR.NS", "ITC.NS", "KOTAKBANK.NS", "AXISBANK.NS",
+    "BAJFINANCE.NS", "ASIANPAINT.NS", "MARUTI.NS",
+    "SUNPHARMA.NS", "TITAN.NS", "WIPRO.NS", "HCLTECH.NS",
+    "NTPC.NS", "ONGC.NS", "JSWSTEEL.NS", "TATASTEEL.NS",
+    "POWERGRID.NS", "ULTRACEMCO.NS", "NESTLEIND.NS",
+    "TECHM.NS", "BAJAJFINSV.NS", "DRREDDY.NS",
+    # Additional Nifty 50 stocks
+    "ADANIENT.NS", "ADANIPORTS.NS", "APOLLOHOSP.NS",
+    "BAJAJ-AUTO.NS", "BEL.NS", "BPCL.NS", "BRITANNIA.NS",
+    "CIPLA.NS", "COALINDIA.NS", "DIVISLAB.NS",
+    "EICHERMOT.NS", "GRASIM.NS", "HDFCLIFE.NS",
+    "HEROMOTOCO.NS", "HINDALCO.NS", "INDUSINDBK.NS",
+    "M&M.NS", "SBILIFE.NS", "SHRIRAMFIN.NS",
+    "TATACONSUM.NS", "TATAMOTORS.NS",
 ]
 
 # ── Indices ────────────────────────────────────────────────────────
@@ -70,7 +79,7 @@ def download_universe(
     Download data for all symbols and save locally.
     Returns dict of {symbol: dataframe}
     """
-    symbols = symbols or NIFTY50[:30] + INDICES
+    symbols = symbols or NIFTY50 + INDICES
     Path(save_dir).mkdir(parents=True, exist_ok=True)
 
     universe = {}

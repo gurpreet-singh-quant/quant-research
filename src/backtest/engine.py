@@ -50,18 +50,15 @@ def compute_metrics(returns: pd.Series,
     if len(returns) < 10:
         return {}
 
-    rf_daily = risk_free / 252
     ann_return = returns.mean() * 252
-    ann_vol = returns.std() * np.sqrt(252)
-    sharpe = (ann_return - risk_free) / ann_vol if ann_vol > 0 else 0.0
+    ann_vol    = returns.std() * np.sqrt(252)
+    sharpe     = (ann_return - risk_free) / ann_vol \
+                 if ann_vol > 0 else 0.0
 
-    # Max drawdown
-    equity = (1 + returns).cumprod()
-    peak = equity.cummax()
+    equity   = (1 + returns).cumprod()
+    peak     = equity.cummax()
     drawdown = (equity - peak) / peak
-    max_dd = drawdown.min()
-
-    # Win rate
+    max_dd   = drawdown.min()
     win_rate = (returns > 0).mean()
 
     return {
@@ -85,8 +82,6 @@ def gt_score(in_sample_returns: pd.Series,
 
     GT-Score > 0.3  → strategy is likely real
     GT-Score < 0.0  → strategy is overfit, discard it
-
-    This is the most important function in the entire system.
     """
     def sharpe(r):
         if len(r) < 10 or r.std() == 0:
@@ -101,21 +96,23 @@ def gt_score(in_sample_returns: pd.Series,
 
 
 def run_backtest(
-    universe: dict,
-    signal_fn: Callable,
-    name: str = "Strategy",
-    train_pct: float = 0.7,
+    universe:         dict,
+    signal_fn:        Callable,
+    name:             str   = "Strategy",
+    train_pct:        float = 0.7,
     transaction_cost: float = 0.001,
-    top_n: int = 3,
+    top_n:            int   = 5,
+    max_weight:       float = 0.15,
 ) -> BacktestResult:
     """
     Run a full walk-forward backtest.
 
-    signal_fn: function that takes a DataFrame and returns
-               a signal score (higher = stronger buy)
-    train_pct: fraction of data used for in-sample testing
+    signal_fn:        function(df) → float signal score
+    train_pct:        fraction of data for in-sample
     transaction_cost: round-trip cost (0.1% default)
-    top_n: number of stocks to hold at any time
+    top_n:            number of stocks to hold at any time
+    max_weight:       maximum weight per stock (15% default)
+                      prevents concentration in single names
     """
 
     # ── Align all stocks to same dates ───────────────────────────
@@ -128,21 +125,23 @@ def run_backtest(
     if len(all_returns) < 100:
         raise ValueError("Not enough data for backtest")
 
-    n = len(all_returns)
+    n     = len(all_returns)
     split = int(n * train_pct)
 
     portfolio_returns = []
-    dates = []
-    trades = 0
-    prev_positions = set()
+    dates            = []
+    trades           = 0
+    prev_positions   = set()
 
     print(f"\nRunning backtest: {name}")
-    print(f"  Period: {all_returns.index[0].date()} → "
+    print(f"  Period:     {all_returns.index[0].date()} → "
           f"{all_returns.index[-1].date()}")
     print(f"  In-sample:  {all_returns.index[0].date()} → "
           f"{all_returns.index[split].date()}")
     print(f"  OOS:        {all_returns.index[split].date()} → "
           f"{all_returns.index[-1].date()}")
+    print(f"  Universe:   {len(all_returns.columns)} stocks")
+    print(f"  Top-N:      {top_n} | Max weight: {max_weight*100:.0f}%")
 
     # ── Walk-forward day by day ───────────────────────────────────
     for i in range(60, n):
@@ -151,7 +150,6 @@ def run_backtest(
         for sym, df in universe.items():
             if sym not in all_returns.columns:
                 continue
-            # Use only data up to today (no lookahead)
             hist = df.iloc[:i]
             if len(hist) < 60:
                 continue
@@ -166,20 +164,29 @@ def run_backtest(
             continue
 
         # Pick top_n stocks by signal score
-        ranked = sorted(day_scores.items(),
-                        key=lambda x: x[1], reverse=True)
+        ranked   = sorted(day_scores.items(),
+                          key=lambda x: x[1], reverse=True)
         selected = set(s for s, _ in ranked[:top_n])
 
-        # Count trades (position changes)
-        trades += len(selected.symmetric_difference(prev_positions))
+        trades += len(
+            selected.symmetric_difference(prev_positions))
         prev_positions = selected
 
-        # Equal-weight portfolio return
         if selected:
-            day_ret = all_returns.iloc[i][list(selected)].mean()
-            # Subtract transaction costs on turnover days
+            # Equal-weight capped at max_weight
+            n_stocks = len(selected)
+            weight   = min(1.0 / n_stocks, max_weight)
+
+            day_ret = sum(
+                weight * all_returns.iloc[i][sym]
+                for sym in selected
+                if sym in all_returns.columns
+            )
+
+            # Transaction cost on turnover
             if selected != prev_positions:
                 day_ret -= transaction_cost
+
             portfolio_returns.append(day_ret)
             dates.append(all_returns.index[i])
 
@@ -188,25 +195,24 @@ def run_backtest(
 
     port = pd.Series(portfolio_returns, index=dates)
 
-    # ── Split into IS and OOS ─────────────────────────────────────
-    split_date = all_returns.index[split]
+    # ── Split IS / OOS ────────────────────────────────────────────
+    split_date  = all_returns.index[split]
     is_returns  = port[port.index <= split_date]
     oos_returns = port[port.index >  split_date]
 
-    # ── Compute metrics ───────────────────────────────────────────
     all_metrics = compute_metrics(port)
-    score = gt_score(is_returns, oos_returns)
+    score       = gt_score(is_returns, oos_returns)
 
     return BacktestResult(
-        strategy_name  = name,
-        annual_return  = all_metrics["annual_return"],
-        annual_vol     = all_metrics["annual_vol"],
-        sharpe_ratio   = all_metrics["sharpe_ratio"],
-        max_drawdown   = all_metrics["max_drawdown"],
-        win_rate       = all_metrics["win_rate"],
-        total_trades   = trades,
-        gt_score       = score,
-        equity_curve   = all_metrics["equity_curve"],
+        strategy_name = name,
+        annual_return = all_metrics["annual_return"],
+        annual_vol    = all_metrics["annual_vol"],
+        sharpe_ratio  = all_metrics["sharpe_ratio"],
+        max_drawdown  = all_metrics["max_drawdown"],
+        win_rate      = all_metrics["win_rate"],
+        total_trades  = trades,
+        gt_score      = score,
+        equity_curve  = all_metrics["equity_curve"],
     )
 
 
@@ -221,18 +227,16 @@ if __name__ == "__main__":
     if not universe:
         print("No data. Run pipeline.py first.")
     else:
-        # ── Strategy 1: Momentum ──────────────────────────────────
         def momentum_signal(df):
             return momentum(df["close"], window=20)
 
         result1 = run_backtest(
             universe, momentum_signal,
             name="20-Day Momentum",
-            top_n=3
+            top_n=5, max_weight=0.15,
         )
         result1.display()
 
-        # ── Strategy 2: Mean Reversion ────────────────────────────
         def mean_rev_signal(df):
             mr = mean_reversion(df["close"], window=20)
             return -mr if not np.isnan(mr) else np.nan
@@ -240,24 +244,22 @@ if __name__ == "__main__":
         result2 = run_backtest(
             universe, mean_rev_signal,
             name="Mean Reversion",
-            top_n=3
+            top_n=5, max_weight=0.15,
         )
         result2.display()
 
-        # ── Strategy 3: Combined ──────────────────────────────────
         def combined_signal(df):
             mom = momentum(df["close"], 20)
             vol = volume_trend(df["volume"], 20)
             r   = rsi(df["close"], 14)
             if any(np.isnan(x) for x in [mom, vol, r]):
                 return np.nan
-            # Momentum confirmed by volume, RSI not overbought
             rsi_filter = 1.0 if r < 65 else 0.5
             return mom * vol * rsi_filter
 
         result3 = run_backtest(
             universe, combined_signal,
             name="Combined (Momentum + Volume + RSI)",
-            top_n=3
+            top_n=5, max_weight=0.15,
         )
         result3.display()
