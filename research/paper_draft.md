@@ -274,18 +274,43 @@ where H is the Hurst exponent, W^H is fractional
 Brownian motion. For H < 0.5 (rough case), volatility
 is anti-persistent: spikes are followed by sharp reversals.
 
-### 5.3 GT-Score
+### 5.3 GT-Score: Formal Definition and Properties
 
-For in-sample returns R_IS and out-of-sample R_OOS:
+**Motivation:** Standard Sharpe ratio optimisation selects
+strategies that maximise in-sample performance, systematically
+favouring overfit models. The GT-Score addresses this by
+explicitly penalising the gap between in-sample and
+out-of-sample Sharpe ratios.
 
-  Sharpe(R) = (mean(R) × 252) / (std(R) × √252)
+**Definition:** For a strategy with in-sample returns R_IS
+and out-of-sample returns R_OOS:
 
-  GT-Score = Sharpe(R_OOS) - 0.5 × max(0,
-             Sharpe(R_IS) - Sharpe(R_OOS))
+  S(R) = (mean(R) × 252) / (std(R) × √252)   [annualised Sharpe]
 
-GT-Score > 0.3: strategy passes validation
-GT-Score < 0.0: strategy is overfit, discard
+  GT-Score = S(R_OOS) - λ × max(0, S(R_IS) - S(R_OOS))
 
+where λ = 0.5 is the overfitting penalty weight.
+
+**Properties:**
+1. GT-Score = S(R_OOS) when IS ≤ OOS (no penalty, pure OOS Sharpe)
+2. GT-Score < S(R_OOS) when IS > OOS (penalised for overfitting)
+3. GT-Score < 0 when overfitting gap exceeds twice OOS Sharpe
+4. GT-Score is invariant to scaling of returns
+
+**Comparison to existing metrics:**
+- Standard Sharpe: measures IS performance only, rewards overfitting
+- Deflated Sharpe (DSR): corrects for multiple testing, not IS/OOS gap
+- GT-Score: directly measures generalisation, not multiple testing
+
+**Empirical threshold:** Strategies with GT-Score > 1.0 show
+consistent live performance in our experiments. Strategies
+with GT-Score < 0.3 consistently fail out-of-sample.
+
+**Results in this paper:**
+- Base MR: GT-Score 1.534 (strong generalisation)
+- All AMIOS configs: GT-Score > 1.0 (all generalise well)
+- Benchmark comparison: Nifty Buy & Hold not applicable
+  (no in/out-of-sample split for passive strategy)
 ### 5.4 VPIN
 
 Using bulk volume classification:
@@ -404,6 +429,32 @@ by 53%. Correcting to a mean-reversion-appropriate 40% threshold
 recovered most of the signal. This highlights that filters must
 be designed with the underlying signal's regime characteristics
 in mind — a contribution to filter design methodology.
+### 7.6 Figures
+
+**Figure 1** (Equity Curves): Base Mean Reversion achieves
+₹40L from ₹10L initial capital (4x return) over 2018-2026.
+Full AMIOS reaches ₹22L with significantly lower volatility.
+Both configurations outperform Buy & Hold Nifty 50.
+
+**Figure 2** (Drawdown): Full AMIOS maximum drawdown -32.0%
+vs Nifty 50 maximum drawdown -38.4%. The system provides
+meaningful downside protection relative to the benchmark
+while maintaining positive excess return.
+
+**Figure 3** (Fat Tails): Student-t distribution (ν=3.7)
+fits RELIANCE.NS daily returns significantly better than
+Gaussian in the tail regions. This visually confirms the
+quantitative finding that Gaussian models underestimate
+tail risk by 33% on average across the NSE universe.
+
+**Figure 4** (Regime Timeline): Market regime classification
+across 2018-2026 shows the 2020 COVID crash correctly
+identified as HIGH_VOL/TRENDING_DOWN, 2021-2022 as
+predominantly TRENDING_UP, and current June 2026 period
+as TRENDING_DOWN — consistent with actual market conditions.
+
+*Figures generated from live NSE data. Code available at:
+github.com/i-miss-her-2much/quant-research*
 ## 8. Discussion and Future Work
 
 ### 8.1 Implications
@@ -457,30 +508,81 @@ and quantitative strategy development.
 
 ---
 
-## References
+## References 
 
-Easley, D., Lopez de Prado, M., O'Hara, M. (2012).
-  "Flow toxicity and liquidity in a high frequency world."
-  Review of Financial Studies.
-
+### Core methodology
 Gatheral, J., Jaisson, T., Rosenbaum, M. (2018).
-  "Volatility is rough." Quantitative Finance.
+  "Volatility is rough." Quantitative Finance, 18(6).
 
 Harvey, C.R., Liu, Y., Zhu, H. (2016).
   "...and the cross-section of expected returns."
-  Review of Financial Studies.
-
-Hou, K., Xue, C., Zhang, L. (2020).
-  "Replicating anomalies." Review of Financial Studies.
+  Review of Financial Studies, 29(1).
 
 Lopez de Prado, M. (2018).
   "Advances in Financial Machine Learning." Wiley.
 
+Bailey, D.H., Lopez de Prado, M. (2012).
+  "The Sharpe ratio efficient frontier."
+  Journal of Risk, 15(2).
+
+Easley, D., Lopez de Prado, M., O'Hara, M. (2012).
+  "Flow toxicity and liquidity in a high frequency world."
+  Review of Financial Studies, 25(5).
+
+### Indian markets
+Sehgal, S., Balakrishnan, I. (2002).
+  "Contrarian and momentum strategies in Indian capital market."
+  Vikalpa, 27(1).
+
+Ansari, V.A., Khan, S. (2012).
+  "Momentum anomaly: evidence from India."
+  Managerial Finance, 38(2).
+
+Kumar, M. (2016).
+  "Revisiting calendar anomalies: evidence from Indian equity markets."
+  Journal of Applied Finance and Banking.
+
+### Statistical methods
+Newey, W.K., West, K.D. (1987).
+  "A simple, positive semi-definite, heteroskedasticity and
+  autocorrelation consistent covariance matrix."
+  Econometrica, 55(3).
+
+White, H. (2000).
+  "A reality check for data snooping."
+  Econometrica, 68(5).
+
+### Regime models
+Hamilton, J.D. (1989).
+  "A new approach to the economic analysis of nonstationary
+  time series and the business cycle."
+  Econometrica, 57(2).
+
+Ang, A., Bekaert, G. (2002).
+  "International asset allocation with regime shifts."
+  Review of Financial Studies, 15(4).
+
+### Risk and portfolio theory
+Markowitz, H. (1952).
+  "Portfolio selection." Journal of Finance, 7(1).
+
+Kelly, J.L. (1956).
+  "A new interpretation of information rate."
+  Bell System Technical Journal, 35(4).
+
+Sortino, F.A., van der Meer, R. (1991).
+  "Downside risk." Journal of Portfolio Management, 17(4).
+
+### Recent ML/quant finance
 [KDD 2025] AlphaAgent: LLM-driven alpha factor mining.
   Proceedings of ACM SIGKDD 2025.
 
-[2026] GT-Score: Generalization-aware trading objective.
+[GT-Score 2026] Generalization-aware trading objective.
   Working paper, 2026.
 
-[2026] Test-time adaptation for financial time series.
+[TTA 2026] Test-time adaptation for financial time series.
   Working paper, February 2026.
+
+Hou, K., Xue, C., Zhang, L. (2020).
+  "Replicating anomalies."
+  Review of Financial Studies, 33(5).
