@@ -1,0 +1,104 @@
+{
+  "trades": [],
+  "daily_log": [
+    {
+      "date": "2026-06-13",
+      "regime": "trending_down",
+      "action": "defensive",
+      "signals": [
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.082,
+          "price": 181.6699981689453
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0773,
+          "price": 259.0
+        },
+        {
+          "symbol": "NTPC.NS",
+          "signal": 0.0704,
+          "price": 355.6499938964844
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "signal": 0.0612,
+          "price": 560.5999755859375
+        },
+        {
+          "symbol": "TATACONSUM.NS",
+          "signal": 0.0603,
+          "price": 1106.5
+        }
+      ],
+      "trades": []
+    },
+    {
+      "date": "2026-06-13",
+      "regime": "trending_down",
+      "action": "defensive",
+      "signals": [
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.082,
+          "price": 181.6699981689453
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0773,
+          "price": 259.0
+        },
+        {
+          "symbol": "NTPC.NS",
+          "signal": 0.0704,
+          "price": 355.6499938964844
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "signal": 0.0612,
+          "price": 560.5999755859375
+        },
+        {
+          "symbol": "TATACONSUM.NS",
+          "signal": 0.0603,
+          "price": 1106.5
+        }
+      ],
+      "trades": []
+    },
+    {
+      "date": "2026-06-14",
+      "regime": "unknown",
+      "action": "reduced",
+      "signals": [
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0994,
+          "price": 246.1999969482422
+        },
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.0828,
+          "price": 180.13999938964844
+        },
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0668,
+          "price": 1021.5999755859376
+        },
+        {
+          "symbol": "SBILIFE.NS",
+          "signal": 0.0604,
+          "price": 1706.0
+        },
+        {
+          "symbol": "NTPC.NS",
+          "signal": 0.0596,
+          "price": 353.8999938964844
+        }
+      ],
+      "trades": []
+    }
+  ]
+}
