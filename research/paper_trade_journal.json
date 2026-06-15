@@ -99,6 +99,39 @@
         }
       ],
       "trades": []
+    },
+    {
+      "date": "2026-06-15",
+      "regime": "trending_up",
+      "action": "momentum",
+      "signals": [
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0987,
+          "price": 244.0
+        },
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.0746,
+          "price": 181.25
+        },
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0702,
+          "price": 1016.0999755859376
+        },
+        {
+          "symbol": "NTPC.NS",
+          "signal": 0.0655,
+          "price": 349.8999938964844
+        },
+        {
+          "symbol": "TATACONSUM.NS",
+          "signal": 0.0429,
+          "price": 1104.800048828125
+        }
+      ],
+      "trades": []
     }
   ]
 }
