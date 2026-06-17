@@ -761,7 +761,7 @@ See Section 6.1 Table and src/signals/factors.py
 
 ```bash
 # Clone repository
-git clone https://github.com/i-miss-her-2much/quant-research
+git clone https://github.com/gurpreet-singh-quant/quant-research
 cd quant-research
 
 # Install dependencies

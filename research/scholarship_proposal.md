@@ -9,7 +9,7 @@ Microstructure Analysis, and Anti-Overfit Validation
 Gurpreet Singh
 B.Tech (H) AI/ML — Computer Science and Engineering
 Akal University, Talwandi Sabo, Bathinda, Punjab
-GitHub: github.com/i-miss-her-2much/quant-research
+GitHub: github.com/gurpreet-singh-quant/quant-research
 ## Problem Statement
 
 Quantitative trading research has developed sophisticated
