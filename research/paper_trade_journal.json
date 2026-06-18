@@ -198,6 +198,39 @@
         }
       ],
       "trades": []
+    },
+    {
+      "date": "2026-06-18",
+      "regime": "trending_up",
+      "action": "momentum",
+      "signals": [
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0679,
+          "price": 1007.5999755859376
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0653,
+          "price": 245.9499969482422
+        },
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.0513,
+          "price": 183.8800048828125
+        },
+        {
+          "symbol": "NTPC.NS",
+          "signal": 0.0353,
+          "price": 356.1499938964844
+        },
+        {
+          "symbol": "BAJAJ-AUTO.NS",
+          "signal": 0.0231,
+          "price": 10027.0
+        }
+      ],
+      "trades": []
     }
   ]
 }
