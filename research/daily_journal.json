@@ -4,9 +4,9 @@
       "date": "2026-06-24",
       "weekday": "Wednesday",
       "regime": "trending_up",
-      "confidence": 0.654,
+      "confidence": 0.638,
       "volatility": 0.1668,
-      "trend_score": 0.0254,
+      "trend_score": 0.0238,
       "action": "momentum",
       "stocks_monitored": 49,
       "trades_passed": 0,
@@ -28,28 +28,28 @@
       "top_signals": [
         {
           "symbol": "WIPRO.NS",
-          "signal": 0.0844,
-          "price": 172.51
+          "signal": 0.0831,
+          "price": 172.75
         },
         {
           "symbol": "INFY.NS",
-          "signal": 0.0787,
-          "price": 1045.0
+          "signal": 0.0786,
+          "price": 1045.1
         },
         {
           "symbol": "HINDALCO.NS",
-          "signal": 0.0715,
-          "price": 981.9
+          "signal": 0.0718,
+          "price": 981.6
         },
         {
           "symbol": "ONGC.NS",
-          "signal": 0.0539,
-          "price": 241.4
+          "signal": 0.0522,
+          "price": 241.85
         },
         {
           "symbol": "TCS.NS",
-          "signal": 0.047,
-          "price": 2092.6
+          "signal": 0.0474,
+          "price": 2091.5
         }
       ],
       "capital_preserved": 1000000
