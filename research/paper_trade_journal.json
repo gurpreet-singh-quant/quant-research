@@ -297,6 +297,39 @@
         }
       ],
       "trades": []
+    },
+    {
+      "date": "2026-06-24",
+      "regime": "trending_up",
+      "action": "momentum",
+      "signals": [
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.0865,
+          "price": 172.08999633789062
+        },
+        {
+          "symbol": "INFY.NS",
+          "signal": 0.0776,
+          "price": 1046.300048828125
+        },
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0694,
+          "price": 984.2999877929688
+        },
+        {
+          "symbol": "TCS.NS",
+          "signal": 0.047,
+          "price": 2092.60009765625
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0469,
+          "price": 243.25
+        }
+      ],
+      "trades": []
     }
   ]
 }
