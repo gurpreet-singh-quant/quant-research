@@ -80,3 +80,116 @@ Traceback (most recent call last):
     return codecs.charmap_encode(input,self.errors,encoding_table)[0]
            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 79: character maps to <undefined>
+To https://github.com/gurpreet-singh-quant/quant-research.git
+   428239e..c21ebc4  main -> main
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no timezone found
+
+Daily Log — 2026-06-24 (Wednesday)
+==================================================
+
+Downloading 52 symbols...
+----------------------------------------
+  RELIANCE.NS: 2094 days ✓
+  TCS.NS: 2094 days ✓
+  HDFCBANK.NS: 2094 days ✓
+  ICICIBANK.NS: 2094 days ✓
+  BHARTIARTL.NS: 2094 days ✓
+  INFY.NS: 2094 days ✓
+  SBIN.NS: 2094 days ✓
+  LT.NS: 2094 days ✓
+  HINDUNILVR.NS: 2094 days ✓
+  ITC.NS: 2094 days ✓
+  KOTAKBANK.NS: 2094 days ✓
+  AXISBANK.NS: 2094 days ✓
+  BAJFINANCE.NS: 2094 days ✓
+  ASIANPAINT.NS: 2094 days ✓
+  MARUTI.NS: 2094 days ✓
+  SUNPHARMA.NS: 2094 days ✓
+  TITAN.NS: 2094 days ✓
+  WIPRO.NS: 2094 days ✓
+  HCLTECH.NS: 2094 days ✓
+  NTPC.NS: 2094 days ✓
+  ONGC.NS: 2094 days ✓
+  JSWSTEEL.NS: 2094 days ✓
+  TATASTEEL.NS: 2094 days ✓
+  POWERGRID.NS: 2094 days ✓
+  ULTRACEMCO.NS: 2094 days ✓
+  NESTLEIND.NS: 2094 days ✓
+  TECHM.NS: 2094 days ✓
+  BAJAJFINSV.NS: 2094 days ✓
+  DRREDDY.NS: 2094 days ✓
+  ADANIENT.NS: 2094 days ✓
+  ADANIPORTS.NS: 2094 days ✓
+  APOLLOHOSP.NS: 2094 days ✓
+  BAJAJ-AUTO.NS: 2094 days ✓
+  BEL.NS: 2094 days ✓
+  BPCL.NS: 2094 days ✓
+  BRITANNIA.NS: 2094 days ✓
+  CIPLA.NS: 2094 days ✓
+  COALINDIA.NS: 2094 days ✓
+  DIVISLAB.NS: 2093 days ✓
+  EICHERMOT.NS: 2094 days ✓
+  GRASIM.NS: 2094 days ✓
+  HDFCLIFE.NS: 2094 days ✓
+  HEROMOTOCO.NS: 2094 days ✓
+  HINDALCO.NS: 2094 days ✓
+  INDUSINDBK.NS: 2094 days ✓
+  M&M.NS: 2094 days ✓
+  SBILIFE.NS: 2094 days ✓
+  SHRIRAMFIN.NS: 2094 days ✓
+  TATACONSUM.NS: 2094 days ✓
+  TATAMOTORS.NS: no data
+  ^NSEI: 2087 days ✓
+  ^NSEBANK: 2088 days ✓
+----------------------------------------
+Done: 51/52 symbols downloaded
+  Regime     : trending_up (77% confidence)
+  Volatility : 16.7%
+  Action     : momentum
+
+  Logged to research/daily_journal.json
+  Total days recorded: 1
+Wrote research/appendix_c_paper_trading.md from 1 logged days.
+
+Preview:
+
+# Appendix C — Paper-Trading Log and Reproducibility
+
+**Period:** 2026-06-24 → 2026-06-24  
+**Trading days logged:** 1  
+**Source:** research/daily_journal.json (auto-generated, not hand-edited)
+
+
+## Regime Distribution
+
+| Regime | Days | % |
+|---|---|---|
+| TRENDING_UP | 1 | 100% |
+
+## Daily Log
+
+| Date | Day | Regime | Conf. | Action | Trades | Top Signal |
+|---|---|---|---|---|---|---|
+| 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) |
+
+## Summary
+
+Across 1 logged trading days, 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
+
+## Reproducibility
+
+```
+git clone https://github.com/gurpreet-singh-quant/quant-research
+cd quant-research
+pip install numpy pandas scipy matplotlib yfinance
+python -m src.data.pipeline
+python -m src.backtest.engine
+python -m src.backtest.statistics
+python scripts/ablation_study.py
+python scripts/sensitivity_analysis.py
+python scripts/daily_log.py --refresh
+```
+
+Environment: Python 3.11+, NumPy 1.26, Pandas 2.x, SciPy 1.17. All experiments run on Windows 10, Intel CPU, no GPU required.
+

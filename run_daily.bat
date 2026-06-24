@@ -1,4 +1,6 @@
 @echo off
+set PYTHONUTF8=1
+set PYTHONIOENCODING=utf-8
 cd /d C:\Users\Admin\quant-research
 if not exist logs mkdir logs
 

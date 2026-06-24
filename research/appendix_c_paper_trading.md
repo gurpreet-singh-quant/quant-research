@@ -15,7 +15,7 @@
 
 | Date | Day | Regime | Conf. | Action | Trades | Top Signal |
 |---|---|---|---|---|---|---|
-| 2026-06-24 | Wed | trending_up | 64% | momentum | 0 | WIPRO.NS (+0.0831) |
+| 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) |
 
 ## Summary
 
