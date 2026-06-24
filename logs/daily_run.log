@@ -1,0 +1,82 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no timezone found
+
+Daily Log — 2026-06-24 (Wednesday)
+==================================================
+
+Downloading 52 symbols...
+----------------------------------------
+  RELIANCE.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  TCS.NS: error — 'charmap' codec can't encode character '\u2713' in position 20: character maps to <undefined>
+  HDFCBANK.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  ICICIBANK.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  BHARTIARTL.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  INFY.NS: error — 'charmap' codec can't encode character '\u2713' in position 21: character maps to <undefined>
+  SBIN.NS: error — 'charmap' codec can't encode character '\u2713' in position 21: character maps to <undefined>
+  LT.NS: error — 'charmap' codec can't encode character '\u2713' in position 19: character maps to <undefined>
+  HINDUNILVR.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  ITC.NS: error — 'charmap' codec can't encode character '\u2713' in position 20: character maps to <undefined>
+  KOTAKBANK.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  AXISBANK.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  BAJFINANCE.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  ASIANPAINT.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  MARUTI.NS: error — 'charmap' codec can't encode character '\u2713' in position 23: character maps to <undefined>
+  SUNPHARMA.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  TITAN.NS: error — 'charmap' codec can't encode character '\u2713' in position 22: character maps to <undefined>
+  WIPRO.NS: error — 'charmap' codec can't encode character '\u2713' in position 22: character maps to <undefined>
+  HCLTECH.NS: error — 'charmap' codec can't encode character '\u2713' in position 24: character maps to <undefined>
+  NTPC.NS: error — 'charmap' codec can't encode character '\u2713' in position 21: character maps to <undefined>
+  ONGC.NS: error — 'charmap' codec can't encode character '\u2713' in position 21: character maps to <undefined>
+  JSWSTEEL.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  TATASTEEL.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  POWERGRID.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  ULTRACEMCO.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  NESTLEIND.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  TECHM.NS: error — 'charmap' codec can't encode character '\u2713' in position 22: character maps to <undefined>
+  BAJAJFINSV.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  DRREDDY.NS: error — 'charmap' codec can't encode character '\u2713' in position 24: character maps to <undefined>
+  ADANIENT.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  ADANIPORTS.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  APOLLOHOSP.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  BAJAJ-AUTO.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  BEL.NS: error — 'charmap' codec can't encode character '\u2713' in position 20: character maps to <undefined>
+  BPCL.NS: error — 'charmap' codec can't encode character '\u2713' in position 21: character maps to <undefined>
+  BRITANNIA.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  CIPLA.NS: error — 'charmap' codec can't encode character '\u2713' in position 22: character maps to <undefined>
+  COALINDIA.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  DIVISLAB.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  EICHERMOT.NS: error — 'charmap' codec can't encode character '\u2713' in position 26: character maps to <undefined>
+  GRASIM.NS: error — 'charmap' codec can't encode character '\u2713' in position 23: character maps to <undefined>
+  HDFCLIFE.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  HEROMOTOCO.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  HINDALCO.NS: error — 'charmap' codec can't encode character '\u2713' in position 25: character maps to <undefined>
+  INDUSINDBK.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  M&M.NS: error — 'charmap' codec can't encode character '\u2713' in position 20: character maps to <undefined>
+  SBILIFE.NS: error — 'charmap' codec can't encode character '\u2713' in position 24: character maps to <undefined>
+  SHRIRAMFIN.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  TATACONSUM.NS: error — 'charmap' codec can't encode character '\u2713' in position 27: character maps to <undefined>
+  TATAMOTORS.NS: no data
+  ^NSEI: error — 'charmap' codec can't encode character '\u2713' in position 19: character maps to <undefined>
+  ^NSEBANK: error — 'charmap' codec can't encode character '\u2713' in position 22: character maps to <undefined>
+----------------------------------------
+Done: 0/52 symbols downloaded
+Traceback (most recent call last):
+  File "C:\Users\Admin\quant-research\scripts\daily_log.py", line 182, in <module>
+    run_today(refresh=refresh)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\quant-research\scripts\daily_log.py", line 81, in run_today
+    nifty_returns = universe["^NSEI"]["returns"].dropna()
+                    ~~~~~~~~^^^^^^^^^
+KeyError: '^NSEI'
+Wrote research/appendix_c_paper_trading.md from 1 logged days.
+
+Preview:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\quant-research\scripts\update_appendix.py", line 122, in <module>
+    print(md[:1500])
+    ~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 79: character maps to <undefined>
