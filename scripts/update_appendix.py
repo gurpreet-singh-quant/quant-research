@@ -22,7 +22,7 @@ def load_journal() -> dict:
         print(f"No journal found at {JOURNAL_PATH}. "
               f"Run scripts/daily_log.py first.")
         sys.exit(1)
-    return json.loads(p.read_text())
+    return json.loads(p.read_text(encoding="utf-8"))
 
 
 def build_markdown(journal: dict) -> str:
@@ -116,7 +116,7 @@ def build_markdown(journal: dict) -> str:
 if __name__ == "__main__":
     journal = load_journal()
     md = build_markdown(journal)
-    Path(OUTPUT_PATH).write_text(md)
+    Path(OUTPUT_PATH).write_text(md, encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH} from {len(journal['entries'])} logged days.")
     print("\nPreview:\n")
     print(md[:1500])

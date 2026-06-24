@@ -37,13 +37,14 @@ JOURNAL_PATH = "research/daily_journal.json"
 def load_journal() -> dict:
     p = Path(JOURNAL_PATH)
     if p.exists():
-        return json.loads(p.read_text())
+        return json.loads(p.read_text(encoding="utf-8"))
     return {"entries": []}
 
 
 def save_journal(journal: dict):
     Path(JOURNAL_PATH).parent.mkdir(parents=True, exist_ok=True)
-    Path(JOURNAL_PATH).write_text(json.dumps(journal, indent=2))
+    Path(JOURNAL_PATH).write_text(
+        json.dumps(journal, indent=2), encoding="utf-8")
 
 
 def upsert_entry(journal: dict, entry: dict):
