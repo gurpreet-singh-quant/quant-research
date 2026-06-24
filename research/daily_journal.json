@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "date": "2026-06-24",
+      "weekday": "Wednesday",
+      "regime": "trending_up",
+      "confidence": 0.654,
+      "volatility": 0.1668,
+      "trend_score": 0.0254,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.0844,
+          "price": 172.51
+        },
+        {
+          "symbol": "INFY.NS",
+          "signal": 0.0787,
+          "price": 1045.0
+        },
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0715,
+          "price": 981.9
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0539,
+          "price": 241.4
+        },
+        {
+          "symbol": "TCS.NS",
+          "signal": 0.047,
+          "price": 2092.6
+        }
+      ],
+      "capital_preserved": 1000000
+    }
+  ]
+}

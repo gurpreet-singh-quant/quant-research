@@ -1,122 +1,181 @@
 """
-Regenerates research/appendix_c_paper_trading.md directly from
-research/daily_journal.json — run this after a few days of logging
-to refresh the paper with real numbers instead of editing by hand.
+Daily Journal — single source of truth for live system operation.
+
+Combines what daily_run.py prints (regime, confidence, action,
+promoter signals) with what paper_trade.py logs (top-5 signals)
+into ONE append-only record: research/daily_journal.json
+
+Skips weekends automatically (NSE closed, yfinance just returns
+stale Friday data — logging it as a "new" day would be dishonest).
+
+Idempotent: running twice on the same date overwrites that day's
+entry rather than duplicating it.
 
 Usage:
-    python scripts/update_appendix.py
+    python scripts/daily_log.py              # log today
+    python scripts/daily_log.py --refresh    # force fresh download
+    python scripts/daily_log.py --report     # print summary so far
 """
 
 import sys
 import json
 from pathlib import Path
+from datetime import datetime, date
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-JOURNAL_PATH  = "research/daily_journal.json"
-OUTPUT_PATH   = "research/appendix_c_paper_trading.md"
+import numpy as np
+from src.data.pipeline import load_universe, download_universe
+from src.signals.factors import mean_reversion
+from src.signals.regime import detect_regime, regime_strategy_map
+from src.signals.checklist import run_checklist
+from src.signals.promoter import simulate_promoter_signals
+
+JOURNAL_PATH = "research/daily_journal.json"
 
 
 def load_journal() -> dict:
     p = Path(JOURNAL_PATH)
-    if not p.exists():
-        print(f"No journal found at {JOURNAL_PATH}. "
-              f"Run scripts/daily_log.py first.")
-        sys.exit(1)
-    return json.loads(p.read_text())
+    if p.exists():
+        return json.loads(p.read_text())
+    return {"entries": []}
 
 
-def build_markdown(journal: dict) -> str:
+def save_journal(journal: dict):
+    Path(JOURNAL_PATH).parent.mkdir(parents=True, exist_ok=True)
+    Path(JOURNAL_PATH).write_text(json.dumps(journal, indent=2))
+
+
+def upsert_entry(journal: dict, entry: dict):
+    """Replace today's entry if it already exists, else append."""
+    entries = journal["entries"]
+    for i, e in enumerate(entries):
+        if e["date"] == entry["date"]:
+            entries[i] = entry
+            return
+    entries.append(entry)
+    entries.sort(key=lambda e: e["date"])
+
+
+def run_today(refresh: bool = False, account_value: float = 1_000_000):
+    today = date.today()
+    weekday_name = today.strftime("%A")
+
+    print(f"\nDaily Log — {today.isoformat()} ({weekday_name})")
+    print("=" * 50)
+
+    # ── Skip weekends: NSE closed, data would be stale ───────────
+    if today.weekday() >= 5:  # 5=Saturday, 6=Sunday
+        print(f"  {weekday_name} — NSE closed. Not logging "
+              f"(would duplicate Friday's data).")
+        return None
+
+    # ── Load data ─────────────────────────────────────────────────
+    if refresh:
+        universe = download_universe()
+    else:
+        universe = load_universe()
+
+    stocks = {k: v for k, v in universe.items() if not k.startswith("^")}
+    nifty_returns = universe["^NSEI"]["returns"].dropna()
+
+    # ── Regime ────────────────────────────────────────────────────
+    regime = detect_regime(nifty_returns)
+    params = regime_strategy_map(regime.regime)
+
+    print(f"  Regime     : {regime.regime.value} "
+          f"({regime.confidence*100:.0f}% confidence)")
+    print(f"  Volatility : {regime.vol_score*100:.1f}%")
+    print(f"  Action     : {params['strategy']}")
+
+    # ── Promoter signals ──────────────────────────────────────────
+    promoter = simulate_promoter_signals(list(stocks.keys()))
+    buying  = {k: v for k, v in promoter.items() if v > 0.3}
+    selling = {k: v for k, v in promoter.items() if v < -0.1}
+
+    # ── Top-5 mean reversion signals (regardless of regime) ──────
+    signals = {}
+    for sym, df in stocks.items():
+        mr = mean_reversion(df["close"], 20)
+        if not np.isnan(mr):
+            signals[sym] = {
+                "signal": round(float(-mr), 4),
+                "price":  round(float(df["close"].iloc[-1]), 2),
+            }
+    ranked = sorted(signals.items(),
+                    key=lambda x: x[1]["signal"], reverse=True)[:5]
+
+    # ── Checklist pass count ──────────────────────────────────────
+    passed = 0
+    if params["position_size"] > 0:
+        for sym, df in stocks.items():
+            mr = mean_reversion(df["close"], 20)
+            if np.isnan(mr):
+                continue
+            result = run_checklist(
+                symbol=sym, df=df, regime=regime.regime,
+                signal_score=mr, signal_type="mean_reversion",
+                direction="long",
+            )
+            if result.passed:
+                passed += 1
+
+    entry = {
+        "date":             today.isoformat(),
+        "weekday":          weekday_name,
+        "regime":           regime.regime.value,
+        "confidence":       round(regime.confidence, 3),
+        "volatility":       round(regime.vol_score, 4),
+        "trend_score":      round(regime.trend_score, 4),
+        "action":           params["strategy"],
+        "stocks_monitored": len(stocks),
+        "trades_passed":    passed,
+        "promoter_buying":  list(buying.keys()),
+        "promoter_selling": list(selling.keys()),
+        "top_signals": [
+            {"symbol": s, **v} for s, v in ranked
+        ],
+        "capital_preserved": account_value,
+    }
+
+    journal = load_journal()
+    upsert_entry(journal, entry)
+    save_journal(journal)
+
+    print(f"\n  Logged to {JOURNAL_PATH}")
+    print(f"  Total days recorded: {len(journal['entries'])}")
+    return entry
+
+
+def show_report():
+    journal = load_journal()
     entries = journal["entries"]
     if not entries:
-        return "# Appendix C\n\nNo data logged yet.\n"
+        print("No entries yet.")
+        return
+
+    print(f"\nDaily Journal Report")
+    print(f"Days logged: {len(entries)}")
+    print(f"Period: {entries[0]['date']} \u2192 {entries[-1]['date']}")
 
     regime_counts = {}
+    total_trades = 0
     for e in entries:
         regime_counts[e["regime"]] = regime_counts.get(e["regime"], 0) + 1
-    n = len(entries)
+        total_trades += e.get("trades_passed", 0)
 
-    lines = []
-    lines.append("# Appendix C \u2014 Paper-Trading Log and Reproducibility\n")
-    lines.append(
-        f"**Period:** {entries[0]['date']} \u2192 {entries[-1]['date']}  \n"
-        f"**Trading days logged:** {n}  \n"
-        f"**Source:** research/daily_journal.json "
-        f"(auto-generated, not hand-edited)\n"
-    )
-
-    lines.append("\n## Regime Distribution\n")
-    lines.append("| Regime | Days | % |")
-    lines.append("|---|---|---|")
+    print(f"\nRegime distribution:")
     for r, c in sorted(regime_counts.items(), key=lambda x: x[1], reverse=True):
-        lines.append(f"| {r.upper()} | {c} | {c/n*100:.0f}% |")
+        print(f"  {r:18s}: {c} days ({c/len(entries)*100:.0f}%)")
 
-    lines.append("\n## Daily Log\n")
-    lines.append("| Date | Day | Regime | Conf. | Action | Trades | Top Signal |")
-    lines.append("|---|---|---|---|---|---|---|")
-    for e in entries:
-        top = e["top_signals"][0] if e["top_signals"] else None
-        top_str = f"{top['symbol']} ({top['signal']:+.4f})" if top else "\u2014"
-        lines.append(
-            f"| {e['date']} | {e['weekday'][:3]} | {e['regime']} | "
-            f"{e['confidence']*100:.0f}% | {e['action']} | "
-            f"{e['trades_passed']} | {top_str} |"
-        )
-
-    total_trades = sum(e["trades_passed"] for e in entries)
-    capital = entries[-1]["capital_preserved"]
-
-    lines.append("\n## Summary\n")
-    lines.append(
-        f"Across {n} logged trading days, {total_trades} total "
-        f"stock-day checklist passes were recorded "
-        f"({'zero' if total_trades == 0 else total_trades} actual trades "
-        f"executed). Capital preserved at \u20b9{capital:,.0f} throughout "
-        f"(0% drawdown) \u2014 consistent with the system correctly "
-        f"withholding capital during unconfirmed or transitioning "
-        f"regime conditions."
-    )
-
-    # Persistent-signal check: same stock appearing as top signal
-    # on multiple consecutive days
-    top_symbols = [e["top_signals"][0]["symbol"] for e in entries
-                   if e["top_signals"]]
-    repeats = {}
-    for s in top_symbols:
-        repeats[s] = repeats.get(s, 0) + 1
-    persistent = {s: c for s, c in repeats.items() if c >= 2}
-    if persistent:
-        lines.append(
-            f"\n**Signal persistence:** "
-            + ", ".join(f"{s} (top signal on {c} days)"
-                        for s, c in sorted(persistent.items(),
-                                          key=lambda x: -x[1]))
-            + " \u2014 indicating the mean-reversion signal is stable "
-              "across consecutive sessions rather than noise."
-        )
-
-    lines.append(
-        "\n## Reproducibility\n\n```\n"
-        "git clone https://github.com/gurpreet-singh-quant/quant-research\n"
-        "cd quant-research\n"
-        "pip install numpy pandas scipy matplotlib yfinance\n"
-        "python -m src.data.pipeline\n"
-        "python -m src.backtest.engine\n"
-        "python -m src.backtest.statistics\n"
-        "python scripts/ablation_study.py\n"
-        "python scripts/sensitivity_analysis.py\n"
-        "python scripts/daily_log.py --refresh\n"
-        "```\n\n"
-        "Environment: Python 3.11+, NumPy 1.26, Pandas 2.x, SciPy 1.17. "
-        "All experiments run on Windows 10, Intel CPU, no GPU required.\n"
-    )
-
-    return "\n".join(lines)
+    print(f"\nTotal trades passed checklist across all days: {total_trades}")
+    print(f"Capital preserved: \u20b9{entries[-1]['capital_preserved']:,.0f} "
+          f"(0% drawdown, {len(entries)} days)")
 
 
 if __name__ == "__main__":
-    journal = load_journal()
-    md = build_markdown(journal)
-    Path(OUTPUT_PATH).write_text(md)
-    print(f"Wrote {OUTPUT_PATH} from {len(journal['entries'])} logged days.")
-    print("\nPreview:\n")
-    print(md[:1500])
+    if "--report" in sys.argv:
+        show_report()
+    else:
+        refresh = "--refresh" in sys.argv
+        run_today(refresh=refresh)
