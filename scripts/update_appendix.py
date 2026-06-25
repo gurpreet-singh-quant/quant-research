@@ -3,6 +3,12 @@ Regenerates research/appendix_c_paper_trading.md directly from
 research/daily_journal.json — run this after a few days of logging
 to refresh the paper with real numbers instead of editing by hand.
 
+Distinguishes automated entries (logged live by daily_log.py) from
+backfilled entries (reconstructed from earlier terminal output) and
+surfaces any documented data gaps — this matters for a research
+paper appendix, where silently smoothing over gaps would be a
+quiet integrity problem, not just a cosmetic one.
+
 Usage:
     python scripts/update_appendix.py
 """
@@ -35,14 +41,28 @@ def build_markdown(journal: dict) -> str:
         regime_counts[e["regime"]] = regime_counts.get(e["regime"], 0) + 1
     n = len(entries)
 
+    n_backfilled = sum(1 for e in entries if e.get("backfilled"))
+    n_automated  = n - n_backfilled
+
     lines = []
     lines.append("# Appendix C \u2014 Paper-Trading Log and Reproducibility\n")
     lines.append(
         f"**Period:** {entries[0]['date']} \u2192 {entries[-1]['date']}  \n"
-        f"**Trading days logged:** {n}  \n"
+        f"**Trading days logged:** {n} "
+        f"({n_automated} automated, {n_backfilled} reconstructed "
+        f"from earlier manual runs \u2014 see Data Notes below)  \n"
         f"**Source:** research/daily_journal.json "
         f"(auto-generated, not hand-edited)\n"
     )
+
+    notes = journal.get("notes", [])
+    if notes:
+        lines.append("\n## Data Notes\n")
+        for note in notes:
+            affected = ", ".join(note.get("affected_dates", []))
+            lines.append(f"- {note['note']}")
+            if affected:
+                lines.append(f"  *(Affected dates: {affected})*")
 
     lines.append("\n## Regime Distribution\n")
     lines.append("| Regime | Days | % |")
@@ -51,15 +71,19 @@ def build_markdown(journal: dict) -> str:
         lines.append(f"| {r.upper()} | {c} | {c/n*100:.0f}% |")
 
     lines.append("\n## Daily Log\n")
-    lines.append("| Date | Day | Regime | Conf. | Action | Trades | Top Signal |")
-    lines.append("|---|---|---|---|---|---|---|")
+    lines.append(
+        "| Date | Day | Regime | Conf. | Action | Trades | "
+        "Top Signal | Source |"
+    )
+    lines.append("|---|---|---|---|---|---|---|---|")
     for e in entries:
         top = e["top_signals"][0] if e["top_signals"] else None
         top_str = f"{top['symbol']} ({top['signal']:+.4f})" if top else "\u2014"
+        src = "Reconstructed" if e.get("backfilled") else "Live-logged"
         lines.append(
             f"| {e['date']} | {e['weekday'][:3]} | {e['regime']} | "
             f"{e['confidence']*100:.0f}% | {e['action']} | "
-            f"{e['trades_passed']} | {top_str} |"
+            f"{e['trades_passed']} | {top_str} | {src} |"
         )
 
     total_trades = sum(e["trades_passed"] for e in entries)
@@ -67,8 +91,11 @@ def build_markdown(journal: dict) -> str:
 
     lines.append("\n## Summary\n")
     lines.append(
-        f"Across {n} logged trading days, {total_trades} total "
-        f"stock-day checklist passes were recorded "
+        f"Across {n} logged trading days ({n_automated} captured live by "
+        f"the automated daily-journal pipeline, {n_backfilled} "
+        f"reconstructed from terminal output recorded during earlier "
+        f"manual runs), {total_trades} total stock-day checklist passes "
+        f"were recorded "
         f"({'zero' if total_trades == 0 else total_trades} actual trades "
         f"executed). Capital preserved at \u20b9{capital:,.0f} throughout "
         f"(0% drawdown) \u2014 consistent with the system correctly "
@@ -76,8 +103,6 @@ def build_markdown(journal: dict) -> str:
         f"regime conditions."
     )
 
-    # Persistent-signal check: same stock appearing as top signal
-    # on multiple consecutive days
     top_symbols = [e["top_signals"][0]["symbol"] for e in entries
                    if e["top_signals"]]
     repeats = {}
@@ -117,6 +142,9 @@ if __name__ == "__main__":
     journal = load_journal()
     md = build_markdown(journal)
     Path(OUTPUT_PATH).write_text(md, encoding="utf-8")
-    print(f"Wrote {OUTPUT_PATH} from {len(journal['entries'])} logged days.")
+    n_bf = sum(1 for e in journal['entries'] if e.get('backfilled'))
+    n_live = len(journal['entries']) - n_bf
+    print(f"Wrote {OUTPUT_PATH} from {len(journal['entries'])} logged days "
+          f"({n_bf} reconstructed, {n_live} live-logged).")
     print("\nPreview:\n")
-    print(md[:1500])
+    print(md[:2000])

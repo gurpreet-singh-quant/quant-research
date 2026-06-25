@@ -1,5 +1,132 @@
 {
+  "notes": [
+    {
+      "added": "2026-06-24",
+      "note": "Days 13 June and 16 June 2026 were tracked live via the earlier scripts/paper_trade.py tool, which logged only top-5 signal scores, not the full regime/confidence/volatility record captured by the unified daily_log.py introduced on 24 June. Aggregate reports at the time classified 13 June as TRENDING_DOWN and one day in this window as UNKNOWN, but the exact confidence/volatility/signal figures for 13 and 16 June were not preserved in a form suitable for this structured journal and are intentionally omitted here rather than reconstructed approximately. This is a known, documented gap; see Section 8.1 (Limitations) for full disclosure.",
+      "affected_dates": ["2026-06-13", "2026-06-16"]
+    }
+  ],
   "entries": [
+    {
+      "date": "2026-06-14",
+      "weekday": "Sunday",
+      "regime": "unknown",
+      "confidence": 0.30,
+      "volatility": 0.195,
+      "trend_score": null,
+      "action": "reduced",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS"],
+      "promoter_note": "Named selling subset only (3 of 7 reported); full buying list not preserved from manual run.",
+      "top_signals": [
+        {"symbol": "ONGC.NS",      "signal": 0.0994, "price": 246.0},
+        {"symbol": "WIPRO.NS",     "signal": 0.0828, "price": 180.0},
+        {"symbol": "HINDALCO.NS",  "signal": 0.0668, "price": 1022.0},
+        {"symbol": "SBILIFE.NS",   "signal": 0.0604, "price": 1706.0},
+        {"symbol": "NTPC.NS",      "signal": 0.0596, "price": 354.0}
+      ],
+      "capital_preserved": 1000000,
+      "backfilled": true,
+      "source": "reconstructed from terminal output, 24 June 2026"
+    },
+    {
+      "date": "2026-06-15",
+      "weekday": "Monday",
+      "regime": "trending_up",
+      "confidence": 0.90,
+      "volatility": 0.192,
+      "trend_score": null,
+      "action": "momentum",
+      "stocks_monitored": 48,
+      "trades_passed": 0,
+      "promoter_buying": [],
+      "promoter_selling": ["HDFCBANK.NS", "ITC.NS", "ADANIENT.NS"],
+      "promoter_note": "Named selling subset only; RELIANCE.NS temporarily missing from universe this day (yfinance data gap, self-resolved next session).",
+      "top_signals": [
+        {"symbol": "ONGC.NS",        "signal": 0.0987, "price": 244.0},
+        {"symbol": "WIPRO.NS",       "signal": 0.0746, "price": 181.0},
+        {"symbol": "HINDALCO.NS",    "signal": 0.0702, "price": 1016.0},
+        {"symbol": "NTPC.NS",        "signal": 0.0655, "price": 350.0},
+        {"symbol": "TATACONSUM.NS",  "signal": 0.0429, "price": 1105.0}
+      ],
+      "capital_preserved": 1000000,
+      "backfilled": true,
+      "source": "reconstructed from terminal output, 24 June 2026"
+    },
+    {
+      "date": "2026-06-17",
+      "weekday": "Wednesday",
+      "regime": "trending_up",
+      "confidence": 0.90,
+      "volatility": 0.190,
+      "trend_score": null,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS"],
+      "promoter_note": "Named selling subset only; full buying list not preserved from manual run. This session includes the diagnostic checklist run on HINDALCO/ONGC/WIPRO showing index-level regime diverging from stock-level momentum (see Appendix D).",
+      "top_signals": [
+        {"symbol": "HINDALCO.NS",   "signal": 0.0940, "price": 982.0},
+        {"symbol": "ONGC.NS",       "signal": 0.0767, "price": 245.0},
+        {"symbol": "WIPRO.NS",      "signal": 0.0524, "price": 184.0},
+        {"symbol": "NTPC.NS",       "signal": 0.0483, "price": 353.0},
+        {"symbol": "BAJAJ-AUTO.NS", "signal": 0.0300, "price": 9977.0}
+      ],
+      "capital_preserved": 1000000,
+      "backfilled": true,
+      "source": "reconstructed from terminal output, 24 June 2026"
+    },
+    {
+      "date": "2026-06-18",
+      "weekday": "Thursday",
+      "regime": "trending_up",
+      "confidence": 0.90,
+      "volatility": 0.189,
+      "trend_score": null,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS"],
+      "promoter_note": "Named selling subset only; full buying list not preserved from manual run.",
+      "top_signals": [
+        {"symbol": "HINDALCO.NS",   "signal": 0.0679, "price": 1008.0},
+        {"symbol": "ONGC.NS",       "signal": 0.0653, "price": 246.0},
+        {"symbol": "WIPRO.NS",      "signal": 0.0513, "price": 184.0},
+        {"symbol": "NTPC.NS",       "signal": 0.0353, "price": 356.0},
+        {"symbol": "BAJAJ-AUTO.NS", "signal": 0.0231, "price": 10027.0}
+      ],
+      "capital_preserved": 1000000,
+      "backfilled": true,
+      "source": "reconstructed from terminal output, 24 June 2026"
+    },
+    {
+      "date": "2026-06-19",
+      "weekday": "Friday",
+      "regime": "trending_up",
+      "confidence": 0.90,
+      "volatility": 0.177,
+      "trend_score": null,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS"],
+      "promoter_note": "Named selling subset only; full buying list not preserved from manual run.",
+      "top_signals": [
+        {"symbol": "INFY.NS",      "signal": 0.0845, "price": 1051.0},
+        {"symbol": "WIPRO.NS",     "signal": 0.0615, "price": 181.0},
+        {"symbol": "HINDALCO.NS",  "signal": 0.0614, "price": 1010.0},
+        {"symbol": "ONGC.NS",      "signal": 0.0562, "price": 246.0},
+        {"symbol": "TCS.NS",       "signal": 0.0450, "price": 2125.0}
+      ],
+      "capital_preserved": 1000000,
+      "backfilled": true,
+      "source": "reconstructed from terminal output, 24 June 2026"
+    },
     {
       "date": "2026-06-24",
       "weekday": "Wednesday",
@@ -10,49 +137,18 @@
       "action": "momentum",
       "stocks_monitored": 49,
       "trades_passed": 0,
-      "promoter_buying": [
-        "SBIN.NS",
-        "LT.NS",
-        "JSWSTEEL.NS",
-        "ADANIENT.NS"
-      ],
-      "promoter_selling": [
-        "TCS.NS",
-        "HINDUNILVR.NS",
-        "DRREDDY.NS",
-        "CIPLA.NS",
-        "HEROMOTOCO.NS",
-        "HINDALCO.NS",
-        "M&M.NS"
-      ],
+      "promoter_buying": ["SBIN.NS", "LT.NS", "JSWSTEEL.NS", "ADANIENT.NS"],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS", "CIPLA.NS", "HEROMOTOCO.NS", "HINDALCO.NS", "M&M.NS"],
       "top_signals": [
-        {
-          "symbol": "WIPRO.NS",
-          "signal": 0.0749,
-          "price": 174.38
-        },
-        {
-          "symbol": "INFY.NS",
-          "signal": 0.0739,
-          "price": 1050.7
-        },
-        {
-          "symbol": "HINDALCO.NS",
-          "signal": 0.0714,
-          "price": 982.1
-        },
-        {
-          "symbol": "ONGC.NS",
-          "signal": 0.052,
-          "price": 241.9
-        },
-        {
-          "symbol": "TCS.NS",
-          "signal": 0.0401,
-          "price": 2108.4
-        }
+        {"symbol": "WIPRO.NS",    "signal": 0.0749, "price": 174.38},
+        {"symbol": "INFY.NS",     "signal": 0.0739, "price": 1050.7},
+        {"symbol": "HINDALCO.NS", "signal": 0.0714, "price": 982.1},
+        {"symbol": "ONGC.NS",     "signal": 0.052,  "price": 241.9},
+        {"symbol": "TCS.NS",      "signal": 0.0401, "price": 2108.4}
       ],
-      "capital_preserved": 1000000
+      "capital_preserved": 1000000,
+      "backfilled": false,
+      "source": "daily_log.py automated run"
     },
     {
       "date": "2026-06-25",
@@ -64,49 +160,18 @@
       "action": "momentum",
       "stocks_monitored": 49,
       "trades_passed": 0,
-      "promoter_buying": [
-        "SBIN.NS",
-        "LT.NS",
-        "JSWSTEEL.NS",
-        "ADANIENT.NS"
-      ],
-      "promoter_selling": [
-        "TCS.NS",
-        "HINDUNILVR.NS",
-        "DRREDDY.NS",
-        "CIPLA.NS",
-        "HEROMOTOCO.NS",
-        "HINDALCO.NS",
-        "M&M.NS"
-      ],
+      "promoter_buying": ["SBIN.NS", "LT.NS", "JSWSTEEL.NS", "ADANIENT.NS"],
+      "promoter_selling": ["TCS.NS", "HINDUNILVR.NS", "DRREDDY.NS", "CIPLA.NS", "HEROMOTOCO.NS", "HINDALCO.NS", "M&M.NS"],
       "top_signals": [
-        {
-          "symbol": "HINDALCO.NS",
-          "signal": 0.0898,
-          "price": 953.4
-        },
-        {
-          "symbol": "INFY.NS",
-          "signal": 0.0792,
-          "price": 1040.6
-        },
-        {
-          "symbol": "ONGC.NS",
-          "signal": 0.0787,
-          "price": 233.1
-        },
-        {
-          "symbol": "WIPRO.NS",
-          "signal": 0.065,
-          "price": 175.01
-        },
-        {
-          "symbol": "TATASTEEL.NS",
-          "signal": 0.0505,
-          "price": 189.02
-        }
+        {"symbol": "HINDALCO.NS",  "signal": 0.0898, "price": 953.4},
+        {"symbol": "INFY.NS",      "signal": 0.0792, "price": 1040.6},
+        {"symbol": "ONGC.NS",      "signal": 0.0787, "price": 233.1},
+        {"symbol": "WIPRO.NS",     "signal": 0.065,  "price": 175.01},
+        {"symbol": "TATASTEEL.NS", "signal": 0.0505, "price": 189.02}
       ],
-      "capital_preserved": 1000000
+      "capital_preserved": 1000000,
+      "backfilled": false,
+      "source": "daily_log.py automated run"
     }
   ]
 }

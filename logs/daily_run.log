@@ -307,3 +307,5 @@ python scripts/daily_log.py --refresh
 
 Environment: Python 3.11+, NumPy 1.26, Pandas 2.x, SciPy 1.17. All experiments run on Windows 10, Intel CPU, no GPU required.
 
+To https://github.com/gurpreet-singh-quant/quant-research.git
+   833e7ce..34d7de8  main -> main
