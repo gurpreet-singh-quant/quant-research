@@ -193,3 +193,117 @@ python scripts/daily_log.py --refresh
 
 Environment: Python 3.11+, NumPy 1.26, Pandas 2.x, SciPy 1.17. All experiments run on Windows 10, Intel CPU, no GPU required.
 
+To https://github.com/gurpreet-singh-quant/quant-research.git
+   c21ebc4..833e7ce  main -> main
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no timezone found
+
+Daily Log — 2026-06-25 (Thursday)
+==================================================
+
+Downloading 52 symbols...
+----------------------------------------
+  RELIANCE.NS: 2095 days ✓
+  TCS.NS: 2095 days ✓
+  HDFCBANK.NS: 2095 days ✓
+  ICICIBANK.NS: 2095 days ✓
+  BHARTIARTL.NS: 2095 days ✓
+  INFY.NS: 2095 days ✓
+  SBIN.NS: 2095 days ✓
+  LT.NS: 2095 days ✓
+  HINDUNILVR.NS: 2095 days ✓
+  ITC.NS: 2095 days ✓
+  KOTAKBANK.NS: 2095 days ✓
+  AXISBANK.NS: 2095 days ✓
+  BAJFINANCE.NS: 2095 days ✓
+  ASIANPAINT.NS: 2095 days ✓
+  MARUTI.NS: 2095 days ✓
+  SUNPHARMA.NS: 2095 days ✓
+  TITAN.NS: 2095 days ✓
+  WIPRO.NS: 2095 days ✓
+  HCLTECH.NS: 2095 days ✓
+  NTPC.NS: 2095 days ✓
+  ONGC.NS: 2095 days ✓
+  JSWSTEEL.NS: 2095 days ✓
+  TATASTEEL.NS: 2095 days ✓
+  POWERGRID.NS: 2095 days ✓
+  ULTRACEMCO.NS: 2095 days ✓
+  NESTLEIND.NS: 2095 days ✓
+  TECHM.NS: 2095 days ✓
+  BAJAJFINSV.NS: 2095 days ✓
+  DRREDDY.NS: 2095 days ✓
+  ADANIENT.NS: 2095 days ✓
+  ADANIPORTS.NS: 2095 days ✓
+  APOLLOHOSP.NS: 2095 days ✓
+  BAJAJ-AUTO.NS: 2095 days ✓
+  BEL.NS: 2095 days ✓
+  BPCL.NS: 2095 days ✓
+  BRITANNIA.NS: 2095 days ✓
+  CIPLA.NS: 2095 days ✓
+  COALINDIA.NS: 2095 days ✓
+  DIVISLAB.NS: 2094 days ✓
+  EICHERMOT.NS: 2095 days ✓
+  GRASIM.NS: 2095 days ✓
+  HDFCLIFE.NS: 2095 days ✓
+  HEROMOTOCO.NS: 2095 days ✓
+  HINDALCO.NS: 2095 days ✓
+  INDUSINDBK.NS: 2095 days ✓
+  M&M.NS: 2095 days ✓
+  SBILIFE.NS: 2095 days ✓
+  SHRIRAMFIN.NS: 2095 days ✓
+  TATACONSUM.NS: 2095 days ✓
+  TATAMOTORS.NS: no data
+  ^NSEI: 2088 days ✓
+  ^NSEBANK: 2089 days ✓
+----------------------------------------
+Done: 51/52 symbols downloaded
+  Regime     : trending_up (89% confidence)
+  Volatility : 16.4%
+  Action     : momentum
+
+  Logged to research/daily_journal.json
+  Total days recorded: 2
+Wrote research/appendix_c_paper_trading.md from 2 logged days.
+
+Preview:
+
+# Appendix C — Paper-Trading Log and Reproducibility
+
+**Period:** 2026-06-24 → 2026-06-25  
+**Trading days logged:** 2  
+**Source:** research/daily_journal.json (auto-generated, not hand-edited)
+
+
+## Regime Distribution
+
+| Regime | Days | % |
+|---|---|---|
+| TRENDING_UP | 2 | 100% |
+
+## Daily Log
+
+| Date | Day | Regime | Conf. | Action | Trades | Top Signal |
+|---|---|---|---|---|---|---|
+| 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) |
+| 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) |
+
+## Summary
+
+Across 2 logged trading days, 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
+
+## Reproducibility
+
+```
+git clone https://github.com/gurpreet-singh-quant/quant-research
+cd quant-research
+pip install numpy pandas scipy matplotlib yfinance
+python -m src.data.pipeline
+python -m src.backtest.engine
+python -m src.backtest.statistics
+python scripts/ablation_study.py
+python scripts/sensitivity_analysis.py
+python scripts/daily_log.py --refresh
+```
+
+Environment: Python 3.11+, NumPy 1.26, Pandas 2.x, SciPy 1.17. All experiments run on Windows 10, Intel CPU, no GPU required.
+

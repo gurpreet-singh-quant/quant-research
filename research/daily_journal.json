@@ -53,6 +53,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-06-25",
+      "weekday": "Thursday",
+      "regime": "trending_up",
+      "confidence": 0.886,
+      "volatility": 0.1636,
+      "trend_score": 0.0486,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "HINDALCO.NS",
+          "signal": 0.0898,
+          "price": 953.4
+        },
+        {
+          "symbol": "INFY.NS",
+          "signal": 0.0792,
+          "price": 1040.6
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0787,
+          "price": 233.1
+        },
+        {
+          "symbol": "WIPRO.NS",
+          "signal": 0.065,
+          "price": 175.01
+        },
+        {
+          "symbol": "TATASTEEL.NS",
+          "signal": 0.0505,
+          "price": 189.02
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }

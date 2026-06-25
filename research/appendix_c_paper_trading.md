@@ -1,7 +1,7 @@
 # Appendix C — Paper-Trading Log and Reproducibility
 
-**Period:** 2026-06-24 → 2026-06-24  
-**Trading days logged:** 1  
+**Period:** 2026-06-24 → 2026-06-25  
+**Trading days logged:** 2  
 **Source:** research/daily_journal.json (auto-generated, not hand-edited)
 
 
@@ -9,17 +9,18 @@
 
 | Regime | Days | % |
 |---|---|---|
-| TRENDING_UP | 1 | 100% |
+| TRENDING_UP | 2 | 100% |
 
 ## Daily Log
 
 | Date | Day | Regime | Conf. | Action | Trades | Top Signal |
 |---|---|---|---|---|---|---|
 | 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) |
+| 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) |
 
 ## Summary
 
-Across 1 logged trading days, 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
+Across 2 logged trading days, 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
 
 ## Reproducibility
 
