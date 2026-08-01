@@ -509,3 +509,48 @@ Preview:
 ## Summary
 
 Across 8 logged trading days (3 c
+To https://github.com/gurpreet-singh-quant/quant-research.git
+   00c7496..20f574a  main -> main
+
+Daily Log — 2026-08-01 (Saturday)
+==================================================
+  Saturday — NSE closed. Not logging (would duplicate Friday's data).
+Wrote research/appendix_c_paper_trading.md from 8 logged days (5 reconstructed, 3 live-logged).
+
+Preview:
+
+# Appendix C — Paper-Trading Log and Reproducibility
+
+**Period:** 2026-06-14 → 2026-07-31  
+**Trading days logged:** 8 (3 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
+**Source:** research/daily_journal.json (auto-generated, not hand-edited)
+
+
+## Data Notes
+
+- Days 13 June and 16 June 2026 were tracked live via the earlier scripts/paper_trade.py tool, which logged only top-5 signal scores, not the full regime/confidence/volatility record captured by the unified daily_log.py introduced on 24 June. Aggregate reports at the time classified 13 June as TRENDING_DOWN and one day in this window as UNKNOWN, but the exact confidence/volatility/signal figures for 13 and 16 June were not preserved in a form suitable for this structured journal and are intentionally omitted here rather than reconstructed approximately. This is a known, documented gap; see Section 8.1 (Limitations) for full disclosure.
+  *(Affected dates: 2026-06-13, 2026-06-16)*
+
+## Regime Distribution
+
+| Regime | Days | % |
+|---|---|---|
+| TRENDING_UP | 7 | 88% |
+| UNKNOWN | 1 | 12% |
+
+## Daily Log
+
+| Date | Day | Regime | Conf. | Action | Trades | Top Signal | Source |
+|---|---|---|---|---|---|---|---|
+| 2026-06-14 | Sun | unknown | 30% | reduced | 0 | ONGC.NS (+0.0994) | Reconstructed |
+| 2026-06-15 | Mon | trending_up | 90% | momentum | 0 | ONGC.NS (+0.0987) | Reconstructed |
+| 2026-06-17 | Wed | trending_up | 90% | momentum | 0 | HINDALCO.NS (+0.0940) | Reconstructed |
+| 2026-06-18 | Thu | trending_up | 90% | momentum | 0 | HINDALCO.NS (+0.0679) | Reconstructed |
+| 2026-06-19 | Fri | trending_up | 90% | momentum | 0 | INFY.NS (+0.0845) | Reconstructed |
+| 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) | Live-logged |
+| 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) | Live-logged |
+| 2026-07-31 | Fri | trending_up | 89% | momentum | 0 | ADANIPORTS.NS (+0.0545) | Live-logged |
+
+## Summary
+
+Across 8 logged trading days (3 c
