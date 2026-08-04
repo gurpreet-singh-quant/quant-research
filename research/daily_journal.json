@@ -420,9 +420,9 @@
       "date": "2026-08-04",
       "weekday": "Tuesday",
       "regime": "trending_up",
-      "confidence": 0.9,
-      "volatility": 0.1232,
-      "trend_score": 0.0629,
+      "confidence": 0.628,
+      "volatility": 0.122,
+      "trend_score": 0.0228,
       "action": "momentum",
       "stocks_monitored": 49,
       "trades_passed": 0,
@@ -444,28 +444,28 @@
       "top_signals": [
         {
           "symbol": "ADANIPORTS.NS",
-          "signal": 0.0456,
-          "price": 1706.9
+          "signal": 0.0495,
+          "price": 1692.8
         },
         {
           "symbol": "HDFCBANK.NS",
-          "signal": 0.0442,
-          "price": 745.8
-        },
-        {
-          "symbol": "DRREDDY.NS",
-          "signal": 0.037,
-          "price": 1163.0
-        },
-        {
-          "symbol": "BEL.NS",
-          "signal": 0.0285,
-          "price": 392.5
+          "signal": 0.0472,
+          "price": 739.55
         },
         {
           "symbol": "HDFCLIFE.NS",
-          "signal": 0.0255,
-          "price": 544.15
+          "signal": 0.0444,
+          "price": 532.05
+        },
+        {
+          "symbol": "DRREDDY.NS",
+          "signal": 0.0335,
+          "price": 1159.0
+        },
+        {
+          "symbol": "BEL.NS",
+          "signal": 0.0322,
+          "price": 389.55
         }
       ],
       "capital_preserved": 1000000

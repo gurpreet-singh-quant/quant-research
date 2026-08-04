@@ -29,7 +29,7 @@
 | 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) | Live-logged |
 | 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) | Live-logged |
 | 2026-07-31 | Fri | trending_up | 89% | momentum | 0 | ADANIPORTS.NS (+0.0545) | Live-logged |
-| 2026-08-04 | Tue | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0456) | Live-logged |
+| 2026-08-04 | Tue | trending_up | 63% | momentum | 0 | ADANIPORTS.NS (+0.0495) | Live-logged |
 
 ## Summary
 
