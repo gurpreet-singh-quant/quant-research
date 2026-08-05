@@ -469,6 +469,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": "Wednesday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.1222,
+      "trend_score": 0.2109,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "HDFCBANK.NS",
+          "signal": 0.0486,
+          "price": 735.0
+        },
+        {
+          "symbol": "ADANIPORTS.NS",
+          "signal": 0.0434,
+          "price": 1700.0
+        },
+        {
+          "symbol": "BEL.NS",
+          "signal": 0.0292,
+          "price": 390.0
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "signal": 0.0206,
+          "price": 545.0
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0203,
+          "price": 240.2
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }

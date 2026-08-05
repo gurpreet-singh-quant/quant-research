@@ -766,3 +766,109 @@ Preview:
 | 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) | Live-logged |
 | 2026-07-31 | Fri | trending_up | 89% | momentum | 0 | ADANIPORTS.NS (+0.0545) | Live-logged |
 | 2026-08-04 | Tue | trending_up | 63% | momen
+To https://github.com/gurpreet-singh-quant/quant-research.git
+   69dfdf9..56f037b  main -> main
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TATAMOTORS.NS"}}}
+$TATAMOTORS.NS: possibly delisted; no timezone found
+
+Daily Log — 2026-08-05 (Wednesday)
+==================================================
+
+Downloading 52 symbols...
+----------------------------------------
+  RELIANCE.NS: 2124 days ✓
+  TCS.NS: 2124 days ✓
+  HDFCBANK.NS: 2124 days ✓
+  ICICIBANK.NS: 2124 days ✓
+  BHARTIARTL.NS: 2124 days ✓
+  INFY.NS: 2124 days ✓
+  SBIN.NS: 2124 days ✓
+  LT.NS: 2124 days ✓
+  HINDUNILVR.NS: 2124 days ✓
+  ITC.NS: 2124 days ✓
+  KOTAKBANK.NS: 2124 days ✓
+  AXISBANK.NS: 2124 days ✓
+  BAJFINANCE.NS: 2124 days ✓
+  ASIANPAINT.NS: 2124 days ✓
+  MARUTI.NS: 2124 days ✓
+  SUNPHARMA.NS: 2124 days ✓
+  TITAN.NS: 2124 days ✓
+  WIPRO.NS: 2124 days ✓
+  HCLTECH.NS: 2124 days ✓
+  NTPC.NS: 2124 days ✓
+  ONGC.NS: 2124 days ✓
+  JSWSTEEL.NS: 2124 days ✓
+  TATASTEEL.NS: 2124 days ✓
+  POWERGRID.NS: 2124 days ✓
+  ULTRACEMCO.NS: 2124 days ✓
+  NESTLEIND.NS: 2124 days ✓
+  TECHM.NS: 2124 days ✓
+  BAJAJFINSV.NS: 2124 days ✓
+  DRREDDY.NS: 2124 days ✓
+  ADANIENT.NS: 2124 days ✓
+  ADANIPORTS.NS: 2124 days ✓
+  APOLLOHOSP.NS: 2124 days ✓
+  BAJAJ-AUTO.NS: 2124 days ✓
+  BEL.NS: 2124 days ✓
+  BPCL.NS: 2124 days ✓
+  BRITANNIA.NS: 2124 days ✓
+  CIPLA.NS: 2124 days ✓
+  COALINDIA.NS: 2124 days ✓
+  DIVISLAB.NS: 2123 days ✓
+  EICHERMOT.NS: 2124 days ✓
+  GRASIM.NS: 2124 days ✓
+  HDFCLIFE.NS: 2124 days ✓
+  HEROMOTOCO.NS: 2124 days ✓
+  HINDALCO.NS: 2124 days ✓
+  INDUSINDBK.NS: 2124 days ✓
+  M&M.NS: 2124 days ✓
+  SBILIFE.NS: 2124 days ✓
+  SHRIRAMFIN.NS: 2124 days ✓
+  TATACONSUM.NS: 2124 days ✓
+  TATAMOTORS.NS: no data
+  ^NSEI: 2116 days ✓
+  ^NSEBANK: 2117 days ✓
+----------------------------------------
+Done: 51/52 symbols downloaded
+  Regime     : trending_up (90% confidence)
+  Volatility : 12.2%
+  Action     : momentum
+
+  Logged to research/daily_journal.json
+  Total days recorded: 10
+Wrote research/appendix_c_paper_trading.md from 10 logged days (5 reconstructed, 5 live-logged).
+
+Preview:
+
+# Appendix C — Paper-Trading Log and Reproducibility
+
+**Period:** 2026-06-14 → 2026-08-05  
+**Trading days logged:** 10 (5 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
+**Source:** research/daily_journal.json (auto-generated, not hand-edited)
+
+
+## Data Notes
+
+- Days 13 June and 16 June 2026 were tracked live via the earlier scripts/paper_trade.py tool, which logged only top-5 signal scores, not the full regime/confidence/volatility record captured by the unified daily_log.py introduced on 24 June. Aggregate reports at the time classified 13 June as TRENDING_DOWN and one day in this window as UNKNOWN, but the exact confidence/volatility/signal figures for 13 and 16 June were not preserved in a form suitable for this structured journal and are intentionally omitted here rather than reconstructed approximately. This is a known, documented gap; see Section 8.1 (Limitations) for full disclosure.
+  *(Affected dates: 2026-06-13, 2026-06-16)*
+
+## Regime Distribution
+
+| Regime | Days | % |
+|---|---|---|
+| TRENDING_UP | 9 | 90% |
+| UNKNOWN | 1 | 10% |
+
+## Daily Log
+
+| Date | Day | Regime | Conf. | Action | Trades | Top Signal | Source |
+|---|---|---|---|---|---|---|---|
+| 2026-06-14 | Sun | unknown | 30% | reduced | 0 | ONGC.NS (+0.0994) | Reconstructed |
+| 2026-06-15 | Mon | trending_up | 90% | momentum | 0 | ONGC.NS (+0.0987) | Reconstructed |
+| 2026-06-17 | Wed | trending_up | 90% | momentum | 0 | HINDALCO.NS (+0.0940) | Reconstructed |
+| 2026-06-18 | Thu | trending_up | 90% | momentum | 0 | HINDALCO.NS (+0.0679) | Reconstructed |
+| 2026-06-19 | Fri | trending_up | 90% | momentum | 0 | INFY.NS (+0.0845) | Reconstructed |
+| 2026-06-24 | Wed | trending_up | 77% | momentum | 0 | WIPRO.NS (+0.0749) | Live-logged |
+| 2026-06-25 | Thu | trending_up | 89% | momentum | 0 | HINDALCO.NS (+0.0898) | Live-logged |
+| 2026-07-31 | Fri | trending_up | 89% | momentum | 0 | ADANIPORTS.NS (+0.0545) | Live-logged |
+| 2026-08-04 | Tue | trending_up | 63% | mome
