@@ -577,6 +577,114 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-10",
+      "weekday": "Monday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.1136,
+      "trend_score": 0.1119,
+      "action": "momentum",
+      "stocks_monitored": 46,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIPORTS.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "ADANIENT.NS",
+        "COALINDIA.NS",
+        "HINDALCO.NS",
+        "INDUSINDBK.NS",
+        "TATACONSUM.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "POWERGRID.NS",
+          "signal": 0.0465,
+          "price": 270.1
+        },
+        {
+          "symbol": "ADANIPORTS.NS",
+          "signal": 0.0442,
+          "price": 1681.0
+        },
+        {
+          "symbol": "HDFCBANK.NS",
+          "signal": 0.0373,
+          "price": 731.0
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "signal": 0.0234,
+          "price": 540.0
+        },
+        {
+          "symbol": "ADANIENT.NS",
+          "signal": 0.0219,
+          "price": 3010.0
+        }
+      ],
+      "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-11",
+      "weekday": "Tuesday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.1159,
+      "trend_score": 0.1096,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "POWERGRID.NS",
+          "signal": 0.0439,
+          "price": 271.6
+        },
+        {
+          "symbol": "HDFCBANK.NS",
+          "signal": 0.0428,
+          "price": 731.0
+        },
+        {
+          "symbol": "ADANIPORTS.NS",
+          "signal": 0.0406,
+          "price": 1693.5
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "signal": 0.0263,
+          "price": 540.0
+        },
+        {
+          "symbol": "ONGC.NS",
+          "signal": 0.0235,
+          "price": 238.85
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
