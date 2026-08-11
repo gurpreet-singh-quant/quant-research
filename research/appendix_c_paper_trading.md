@@ -33,7 +33,7 @@
 | 2026-08-05 | Wed | trending_up | 90% | momentum | 0 | HDFCBANK.NS (+0.0486) | Live-logged |
 | 2026-08-06 | Thu | trending_up | 90% | momentum | 0 | POWERGRID.NS (+0.0460) | Live-logged |
 | 2026-08-10 | Mon | trending_up | 90% | momentum | 0 | POWERGRID.NS (+0.0465) | Live-logged |
-| 2026-08-11 | Tue | trending_up | 90% | momentum | 0 | POWERGRID.NS (+0.0532) | Live-logged |
+| 2026-08-11 | Tue | trending_up | 90% | momentum | 0 | POWERGRID.NS (+0.0510) | Live-logged |
 
 ## Summary
 

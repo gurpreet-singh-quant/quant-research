@@ -637,51 +637,51 @@
       "weekday": "Tuesday",
       "regime": "trending_up",
       "confidence": 0.9,
-      "volatility": 0.1143,
-      "trend_score": 0.1119,
+      "volatility": 0.1139,
+      "trend_score": 0.1219,
       "action": "momentum",
-      "stocks_monitored": 48,
+      "stocks_monitored": 49,
       "trades_passed": 0,
       "promoter_buying": [
         "SBIN.NS",
         "LT.NS",
-        "TATASTEEL.NS",
-        "ADANIPORTS.NS"
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
       ],
       "promoter_selling": [
         "TCS.NS",
         "HINDUNILVR.NS",
-        "ADANIENT.NS",
-        "COALINDIA.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
         "HINDALCO.NS",
-        "INDUSINDBK.NS",
-        "SBILIFE.NS"
+        "M&M.NS"
       ],
       "top_signals": [
         {
           "symbol": "POWERGRID.NS",
-          "signal": 0.0532,
-          "price": 267.3
+          "signal": 0.051,
+          "price": 267.95
         },
         {
           "symbol": "ADANIPORTS.NS",
-          "signal": 0.0474,
-          "price": 1668.0
+          "signal": 0.0473,
+          "price": 1668.2
         },
         {
           "symbol": "HDFCBANK.NS",
-          "signal": 0.0356,
-          "price": 728.35
+          "signal": 0.0348,
+          "price": 729.0
         },
         {
           "symbol": "HDFCLIFE.NS",
-          "signal": 0.0321,
-          "price": 534.15
+          "signal": 0.0289,
+          "price": 536.0
         },
         {
-          "symbol": "NTPC.NS",
-          "signal": 0.0259,
-          "price": 336.55
+          "symbol": "ADANIENT.NS",
+          "signal": 0.0235,
+          "price": 2995.5
         }
       ],
       "capital_preserved": 1000000
