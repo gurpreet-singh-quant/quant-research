@@ -739,6 +739,54 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-13",
+      "weekday": "Thursday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.1143,
+      "trend_score": 0.0805,
+      "action": "momentum",
+      "stocks_monitored": 23,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "BAJAJ-AUTO.NS",
+        "BEL.NS",
+        "SHRIRAMFIN.NS"
+      ],
+      "promoter_selling": [
+        "BAJAJFINSV.NS",
+        "BPCL.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "ADANIPORTS.NS",
+          "signal": 0.0481,
+          "price": 1650.7
+        },
+        {
+          "symbol": "ADANIENT.NS",
+          "signal": 0.0312,
+          "price": 2954.6
+        },
+        {
+          "symbol": "APOLLOHOSP.NS",
+          "signal": 0.0253,
+          "price": 8650.0
+        },
+        {
+          "symbol": "SBILIFE.NS",
+          "signal": 0.0216,
+          "price": 1817.9
+        },
+        {
+          "symbol": "BPCL.NS",
+          "signal": 0.0196,
+          "price": 312.05
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
