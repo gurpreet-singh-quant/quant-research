@@ -787,6 +787,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-14",
+      "weekday": "Friday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.114,
+      "trend_score": 0.1047,
+      "action": "momentum",
+      "stocks_monitored": 48,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "LT.NS",
+        "HINDUNILVR.NS",
+        "TATASTEEL.NS",
+        "ADANIPORTS.NS"
+      ],
+      "promoter_selling": [
+        "HDFCBANK.NS",
+        "ITC.NS",
+        "ADANIENT.NS",
+        "COALINDIA.NS",
+        "HINDALCO.NS",
+        "INDUSINDBK.NS",
+        "SBILIFE.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "ADANIPORTS.NS",
+          "signal": 0.0446,
+          "price": 1665.0
+        },
+        {
+          "symbol": "POWERGRID.NS",
+          "signal": 0.0438,
+          "price": 269.45
+        },
+        {
+          "symbol": "APOLLOHOSP.NS",
+          "signal": 0.0326,
+          "price": 8597.0
+        },
+        {
+          "symbol": "HDFCBANK.NS",
+          "signal": 0.0293,
+          "price": 729.0
+        },
+        {
+          "symbol": "TATACONSUM.NS",
+          "signal": 0.0268,
+          "price": 1061.9
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }

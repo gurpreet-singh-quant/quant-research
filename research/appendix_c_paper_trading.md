@@ -1,7 +1,7 @@
 # Appendix C — Paper-Trading Log and Reproducibility
 
-**Period:** 2026-06-14 → 2026-08-13  
-**Trading days logged:** 15 (10 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
+**Period:** 2026-06-14 → 2026-08-14  
+**Trading days logged:** 16 (11 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
 **Source:** research/daily_journal.json (auto-generated, not hand-edited)
 
 
@@ -14,8 +14,8 @@
 
 | Regime | Days | % |
 |---|---|---|
-| TRENDING_UP | 14 | 93% |
-| UNKNOWN | 1 | 7% |
+| TRENDING_UP | 15 | 94% |
+| UNKNOWN | 1 | 6% |
 
 ## Daily Log
 
@@ -36,12 +36,13 @@
 | 2026-08-11 | Tue | trending_up | 90% | momentum | 0 | POWERGRID.NS (+0.0510) | Live-logged |
 | 2026-08-12 | Wed | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0446) | Live-logged |
 | 2026-08-13 | Thu | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0481) | Live-logged |
+| 2026-08-14 | Fri | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0446) | Live-logged |
 
 ## Summary
 
-Across 15 logged trading days (10 captured live by the automated daily-journal pipeline, 5 reconstructed from terminal output recorded during earlier manual runs), 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
+Across 16 logged trading days (11 captured live by the automated daily-journal pipeline, 5 reconstructed from terminal output recorded during earlier manual runs), 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
 
-**Signal persistence:** ADANIPORTS.NS (top signal on 4 days), HINDALCO.NS (top signal on 3 days), POWERGRID.NS (top signal on 3 days), ONGC.NS (top signal on 2 days) — indicating the mean-reversion signal is stable across consecutive sessions rather than noise.
+**Signal persistence:** ADANIPORTS.NS (top signal on 5 days), HINDALCO.NS (top signal on 3 days), POWERGRID.NS (top signal on 3 days), ONGC.NS (top signal on 2 days) — indicating the mean-reversion signal is stable across consecutive sessions rather than noise.
 
 ## Reproducibility
 
