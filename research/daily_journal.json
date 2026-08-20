@@ -895,6 +895,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-21",
+      "weekday": "Friday",
+      "regime": "trending_up",
+      "confidence": 0.646,
+      "volatility": 0.1119,
+      "trend_score": 0.0246,
+      "action": "momentum",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "ITC.NS",
+          "signal": 0.0508,
+          "price": 267.05
+        },
+        {
+          "symbol": "POWERGRID.NS",
+          "signal": 0.0483,
+          "price": 263.5
+        },
+        {
+          "symbol": "SBILIFE.NS",
+          "signal": 0.0379,
+          "price": 1780.4
+        },
+        {
+          "symbol": "TCS.NS",
+          "signal": 0.0351,
+          "price": 2289.0
+        },
+        {
+          "symbol": "BPCL.NS",
+          "signal": 0.034,
+          "price": 307.0
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
