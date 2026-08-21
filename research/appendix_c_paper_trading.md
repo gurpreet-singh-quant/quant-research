@@ -38,7 +38,7 @@
 | 2026-08-13 | Thu | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0481) | Live-logged |
 | 2026-08-14 | Fri | trending_up | 90% | momentum | 0 | ADANIPORTS.NS (+0.0446) | Live-logged |
 | 2026-08-17 | Mon | unknown | 30% | reduced | 0 | POWERGRID.NS (+0.0506) | Live-logged |
-| 2026-08-21 | Fri | trending_up | 65% | momentum | 0 | ITC.NS (+0.0508) | Live-logged |
+| 2026-08-21 | Fri | trending_up | 90% | momentum | 0 | TCS.NS (+0.0438) | Live-logged |
 
 ## Summary
 

@@ -900,9 +900,9 @@
       "date": "2026-08-21",
       "weekday": "Friday",
       "regime": "trending_up",
-      "confidence": 0.646,
-      "volatility": 0.1119,
-      "trend_score": 0.0246,
+      "confidence": 0.9,
+      "volatility": 0.1122,
+      "trend_score": 0.1312,
       "action": "momentum",
       "stocks_monitored": 49,
       "trades_passed": 0,
@@ -923,29 +923,29 @@
       ],
       "top_signals": [
         {
-          "symbol": "ITC.NS",
-          "signal": 0.0508,
-          "price": 267.05
+          "symbol": "TCS.NS",
+          "signal": 0.0438,
+          "price": 2272.0
         },
         {
-          "symbol": "POWERGRID.NS",
-          "signal": 0.0483,
-          "price": 263.5
+          "symbol": "ASIANPAINT.NS",
+          "signal": 0.0369,
+          "price": 2620.5
+        },
+        {
+          "symbol": "ITC.NS",
+          "signal": 0.0356,
+          "price": 270.25
         },
         {
           "symbol": "SBILIFE.NS",
-          "signal": 0.0379,
-          "price": 1780.4
+          "signal": 0.0348,
+          "price": 1778.8
         },
         {
-          "symbol": "TCS.NS",
-          "signal": 0.0351,
-          "price": 2289.0
-        },
-        {
-          "symbol": "BPCL.NS",
-          "signal": 0.034,
-          "price": 307.0
+          "symbol": "POWERGRID.NS",
+          "signal": 0.032,
+          "price": 265.7
         }
       ],
       "capital_preserved": 1000000
