@@ -958,21 +958,22 @@
       "volatility": 0.1068,
       "trend_score": 0.0984,
       "action": "momentum",
-      "stocks_monitored": 45,
+      "stocks_monitored": 49,
       "trades_passed": 0,
       "promoter_buying": [
         "SBIN.NS",
         "LT.NS",
-        "NESTLEIND.NS",
-        "BEL.NS"
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
       ],
       "promoter_selling": [
         "TCS.NS",
         "HINDUNILVR.NS",
-        "BAJAJ-AUTO.NS",
-        "GRASIM.NS",
-        "SBILIFE.NS",
-        "SHRIRAMFIN.NS"
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
       ],
       "top_signals": [
         {
