@@ -949,6 +949,59 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-08-25",
+      "weekday": "Tuesday",
+      "regime": "trending_up",
+      "confidence": 0.9,
+      "volatility": 0.1068,
+      "trend_score": 0.0984,
+      "action": "momentum",
+      "stocks_monitored": 45,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "NESTLEIND.NS",
+        "BEL.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "BAJAJ-AUTO.NS",
+        "GRASIM.NS",
+        "SBILIFE.NS",
+        "SHRIRAMFIN.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "SBILIFE.NS",
+          "signal": 0.0419,
+          "price": 1755.0
+        },
+        {
+          "symbol": "TCS.NS",
+          "signal": 0.0319,
+          "price": 2296.2
+        },
+        {
+          "symbol": "ASIANPAINT.NS",
+          "signal": 0.0286,
+          "price": 2639.8
+        },
+        {
+          "symbol": "ITC.NS",
+          "signal": 0.0262,
+          "price": 271.4
+        },
+        {
+          "symbol": "HINDUNILVR.NS",
+          "signal": 0.0225,
+          "price": 2024.2
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
