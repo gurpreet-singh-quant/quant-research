@@ -1057,6 +1057,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-09-01",
+      "weekday": "Tuesday",
+      "regime": "trending_down",
+      "confidence": 0.9,
+      "volatility": 0.1075,
+      "trend_score": -0.0573,
+      "action": "defensive",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "ITC.NS",
+          "signal": 0.0374,
+          "price": 266.0
+        },
+        {
+          "symbol": "ASIANPAINT.NS",
+          "signal": 0.0315,
+          "price": 2608.7
+        },
+        {
+          "symbol": "MARUTI.NS",
+          "signal": 0.0304,
+          "price": 13376.0
+        },
+        {
+          "symbol": "BHARTIARTL.NS",
+          "signal": 0.0302,
+          "price": 1882.4
+        },
+        {
+          "symbol": "TATACONSUM.NS",
+          "signal": 0.0296,
+          "price": 1040.7
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
