@@ -42,13 +42,13 @@
 | 2026-08-21 | Fri | trending_up | 90% | momentum | 0 | TCS.NS (+0.0438) | Live-logged |
 | 2026-08-25 | Tue | trending_up | 90% | momentum | 0 | SBILIFE.NS (+0.0419) | Live-logged |
 | 2026-08-31 | Mon | trending_down | 90% | defensive | 0 | ITC.NS (+0.0701) | Live-logged |
-| 2026-09-01 | Tue | trending_down | 90% | defensive | 0 | ITC.NS (+0.0374) | Live-logged |
+| 2026-09-01 | Tue | trending_down | 90% | defensive | 0 | MARUTI.NS (+0.0560) | Live-logged |
 
 ## Summary
 
 Across 21 logged trading days (16 captured live by the automated daily-journal pipeline, 5 reconstructed from terminal output recorded during earlier manual runs), 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
 
-**Signal persistence:** ADANIPORTS.NS (top signal on 5 days), POWERGRID.NS (top signal on 4 days), HINDALCO.NS (top signal on 3 days), ONGC.NS (top signal on 2 days), ITC.NS (top signal on 2 days) — indicating the mean-reversion signal is stable across consecutive sessions rather than noise.
+**Signal persistence:** ADANIPORTS.NS (top signal on 5 days), POWERGRID.NS (top signal on 4 days), HINDALCO.NS (top signal on 3 days), ONGC.NS (top signal on 2 days) — indicating the mean-reversion signal is stable across consecutive sessions rather than noise.
 
 ## Reproducibility
 

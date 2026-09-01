@@ -1063,8 +1063,8 @@
       "weekday": "Tuesday",
       "regime": "trending_down",
       "confidence": 0.9,
-      "volatility": 0.1075,
-      "trend_score": -0.0573,
+      "volatility": 0.1074,
+      "trend_score": -0.1858,
       "action": "defensive",
       "stocks_monitored": 49,
       "trades_passed": 0,
@@ -1085,29 +1085,29 @@
       ],
       "top_signals": [
         {
-          "symbol": "ITC.NS",
-          "signal": 0.0374,
-          "price": 266.0
-        },
-        {
-          "symbol": "ASIANPAINT.NS",
-          "signal": 0.0315,
-          "price": 2608.7
-        },
-        {
           "symbol": "MARUTI.NS",
-          "signal": 0.0304,
-          "price": 13376.0
+          "signal": 0.056,
+          "price": 12950.0
         },
         {
-          "symbol": "BHARTIARTL.NS",
-          "signal": 0.0302,
-          "price": 1882.4
+          "symbol": "SHRIRAMFIN.NS",
+          "signal": 0.052,
+          "price": 1059.1
         },
         {
-          "symbol": "TATACONSUM.NS",
-          "signal": 0.0296,
-          "price": 1040.7
+          "symbol": "ADANIENT.NS",
+          "signal": 0.0511,
+          "price": 2863.9
+        },
+        {
+          "symbol": "BRITANNIA.NS",
+          "signal": 0.0467,
+          "price": 5187.0
+        },
+        {
+          "symbol": "M&M.NS",
+          "signal": 0.0432,
+          "price": 3259.0
         }
       ],
       "capital_preserved": 1000000
