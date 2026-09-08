@@ -1111,6 +1111,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-09-08",
+      "weekday": "Tuesday",
+      "regime": "trending_down",
+      "confidence": 0.9,
+      "volatility": 0.097,
+      "trend_score": -0.2246,
+      "action": "defensive",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "SHRIRAMFIN.NS",
+          "signal": 0.0625,
+          "price": 1026.2
+        },
+        {
+          "symbol": "MARUTI.NS",
+          "signal": 0.0555,
+          "price": 12660.0
+        },
+        {
+          "symbol": "M&M.NS",
+          "signal": 0.0553,
+          "price": 3145.9
+        },
+        {
+          "symbol": "BRITANNIA.NS",
+          "signal": 0.049,
+          "price": 5076.0
+        },
+        {
+          "symbol": "HEROMOTOCO.NS",
+          "signal": 0.0487,
+          "price": 5316.0
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
