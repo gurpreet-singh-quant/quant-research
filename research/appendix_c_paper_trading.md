@@ -1,7 +1,7 @@
 # Appendix C — Paper-Trading Log and Reproducibility
 
-**Period:** 2026-06-14 → 2026-09-08  
-**Trading days logged:** 22 (17 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
+**Period:** 2026-06-14 → 2026-09-14  
+**Trading days logged:** 23 (18 automated, 5 reconstructed from earlier manual runs — see Data Notes below)  
 **Source:** research/daily_journal.json (auto-generated, not hand-edited)
 
 
@@ -14,8 +14,8 @@
 
 | Regime | Days | % |
 |---|---|---|
-| TRENDING_UP | 17 | 77% |
-| TRENDING_DOWN | 3 | 14% |
+| TRENDING_UP | 17 | 74% |
+| TRENDING_DOWN | 4 | 17% |
 | UNKNOWN | 2 | 9% |
 
 ## Daily Log
@@ -44,10 +44,11 @@
 | 2026-08-31 | Mon | trending_down | 90% | defensive | 0 | ITC.NS (+0.0701) | Live-logged |
 | 2026-09-01 | Tue | trending_down | 90% | defensive | 0 | MARUTI.NS (+0.0560) | Live-logged |
 | 2026-09-08 | Tue | trending_down | 90% | defensive | 0 | SHRIRAMFIN.NS (+0.0625) | Live-logged |
+| 2026-09-14 | Mon | trending_down | 90% | defensive | 0 | HCLTECH.NS (+0.0691) | Live-logged |
 
 ## Summary
 
-Across 22 logged trading days (17 captured live by the automated daily-journal pipeline, 5 reconstructed from terminal output recorded during earlier manual runs), 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
+Across 23 logged trading days (18 captured live by the automated daily-journal pipeline, 5 reconstructed from terminal output recorded during earlier manual runs), 0 total stock-day checklist passes were recorded (zero actual trades executed). Capital preserved at ₹1,000,000 throughout (0% drawdown) — consistent with the system correctly withholding capital during unconfirmed or transitioning regime conditions.
 
 **Signal persistence:** ADANIPORTS.NS (top signal on 5 days), POWERGRID.NS (top signal on 4 days), HINDALCO.NS (top signal on 3 days), ONGC.NS (top signal on 2 days) — indicating the mean-reversion signal is stable across consecutive sessions rather than noise.
 

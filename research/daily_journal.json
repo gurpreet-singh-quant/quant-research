@@ -1165,6 +1165,60 @@
         }
       ],
       "capital_preserved": 1000000
+    },
+    {
+      "date": "2026-09-14",
+      "weekday": "Monday",
+      "regime": "trending_down",
+      "confidence": 0.9,
+      "volatility": 0.0974,
+      "trend_score": -0.2694,
+      "action": "defensive",
+      "stocks_monitored": 49,
+      "trades_passed": 0,
+      "promoter_buying": [
+        "SBIN.NS",
+        "LT.NS",
+        "JSWSTEEL.NS",
+        "ADANIENT.NS"
+      ],
+      "promoter_selling": [
+        "TCS.NS",
+        "HINDUNILVR.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "HEROMOTOCO.NS",
+        "HINDALCO.NS",
+        "M&M.NS"
+      ],
+      "top_signals": [
+        {
+          "symbol": "HCLTECH.NS",
+          "signal": 0.0691,
+          "price": 1206.1
+        },
+        {
+          "symbol": "INFY.NS",
+          "signal": 0.067,
+          "price": 1037.7
+        },
+        {
+          "symbol": "MARUTI.NS",
+          "signal": 0.0608,
+          "price": 12400.0
+        },
+        {
+          "symbol": "BRITANNIA.NS",
+          "signal": 0.0547,
+          "price": 4962.0
+        },
+        {
+          "symbol": "M&M.NS",
+          "signal": 0.0547,
+          "price": 3107.0
+        }
+      ],
+      "capital_preserved": 1000000
     }
   ]
 }
